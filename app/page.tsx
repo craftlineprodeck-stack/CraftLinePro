@@ -4,11 +4,11 @@ import HomePage from './components/HomePage';
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://craftline.com/#organization",
+  "@id": "https://craftlineprodeck.com/#organization",
   "name": "CraftLine Deck & Fence",
   "alternateName": "CraftLine",
   "description": "Professional deck, porch, and fence restoration services in Sacramento and surrounding areas. Licensed and insured with quality workmanship.",
-  "url": "https://craftline.com/",
+  "url": "https://craftlineprodeck.com/",
   "telephone": "(916) 841-4316",
   "email": "CraftLine.Prodeck@gmail.com",
   "address": {
@@ -40,8 +40,8 @@ const localBusinessSchema = {
     "Pergola Installation"
   ],
   "priceRange": "$$",
-  "image": "https://craftline.com/icon.png",
-  "logo": "https://craftline.com/icon.png",
+  "image": "https://craftlineprodeck.com/icon.png",
+  "logo": "https://craftlineprodeck.com/icon.png",
   "sameAs": [
     "https://www.instagram.com/craftline.sacramento",
     "https://yelp.to/1YJwTMiSXR",
@@ -59,7 +59,7 @@ const serviceSchema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "CraftLine Deck & Fence",
-    "url": "https://craftline.com/"
+    "url": "https://craftlineprodeck.com/"
   },
   "areaServed": {
     "@type": "State",

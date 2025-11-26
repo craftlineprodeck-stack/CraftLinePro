@@ -16,7 +16,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://craftline.com'),
+  metadataBase: new URL('https://craftlineprodeck.com'),
   title: "CraftLine — Deck & Fence Installation, Repair & Composite Decking | Deck Builder Sacramento",
   description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, wood staining, composite decking, porch restoration. Licensed, insured. Free estimates.",
   keywords: ["deck builder Sacramento", "deck installation", "fence contractor", "composite decking", "fence repair", "deck restoration", "wood staining", "porch restoration", "pergola installation", "deck builder", "fence installation", "deck repair", "deck repair sacramento", "sacramento deck repair", "deck design", "deck railing", "sacramento balcony repair", "deck stairs repair", "deck cleaning carmichael"],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CraftLine - Deck & Fence Installation, Repair and Composite Decking | Deck Builder Sacramento",
     description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, wood staining, composite decking, porch restoration.",
-    url: "https://craftline.com",
+    url: "https://craftlineprodeck.com",
     siteName: "CraftLine Deck & Fence",
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ["/icon.png"],
   },
   alternates: {
-    canonical: "https://craftline.com",
+    canonical: "https://craftlineprodeck.com",
   },
 };
 
