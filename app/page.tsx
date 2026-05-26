@@ -9,7 +9,7 @@ const localBusinessSchema = {
   "alternateName": "CraftLine",
   "description": "Professional deck, porch, and fence restoration services in Sacramento and surrounding areas. Licensed and insured with quality workmanship.",
   "url": "https://craftlineprodeck.com/",
-  "telephone": "(916) 841-4316",
+  "telephone": "(279) 237-9912",
   "email": "CraftLine.Prodeck@gmail.com",
   "address": {
     "@type": "PostalAddress",

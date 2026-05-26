@@ -108,7 +108,7 @@ npm run build
 
 ## 📞 Contact
 
-- **Phone**: (916) 841-4316
+- **Phone**: (279) 237-9912
 - **Email**: CraftLine.Prodeck@gmail.com
 - **Instagram**: [@craftline.sacramento](https://www.instagram.com/craftline.sacramento)
 

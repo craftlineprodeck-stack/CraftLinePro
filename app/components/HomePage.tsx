@@ -453,7 +453,7 @@ export default function HomePage() {
 
               {/* Phone Icon */}
               <a
-                href="tel:9168414316"
+                href="tel:2792379912"
                 className="text-brand-brown hover:text-brand-orange cursor-pointer transition-all duration-300 transform hover:scale-110"
               >
                 <RiPhoneFill className="text-2xl xl:text-3xl" />
@@ -503,11 +503,11 @@ export default function HomePage() {
                 </button>
 
                 <a
-                  href="tel:9168414316"
+                  href="tel:2792379912"
                   className="flex items-center gap-2 text-brand-brown hover:text-brand-orange font-semibold py-3 px-3 border-t border-gray-200 mt-2 transition-all duration-300 transform hover:scale-105"
                 >
                   <RiPhoneFill className="text-xl text-brand-orange" />
-                  <span>(916) 841-4316</span>
+                  <span>(279) 237-9912</span>
                 </a>
 
                 <button
@@ -1032,9 +1032,9 @@ export default function HomePage() {
           </button>
 
           <div className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 text-stone-100">
-            <a href="tel:9168414316" className="flex items-center justify-center hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-110 hover:brightness-125">
+            <a href="tel:2792379912" className="flex items-center justify-center hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-110 hover:brightness-125">
               <RiPhoneLine className="text-xl mr-2 hover:animate-pulse" />
-              <span className="text-base font-semibold">(916) 841-4316</span>
+              <span className="text-base font-semibold">(279) 237-9912</span>
             </a>
             <div className="flex items-center justify-center">
               <RiTimeLine className="text-xl mr-2" />
@@ -1189,9 +1189,9 @@ export default function HomePage() {
             <div className="mt-8 text-center">
               <p className="text-brand-muted mb-4 uppercase tracking-wide font-medium">Or contact us directly:</p>
               <div className="flex flex-wrap justify-center gap-6">
-                <a href="tel:9168414316" className="flex items-center text-brand-brown hover:text-orange-600 cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
+                <a href="tel:2792379912" className="flex items-center text-brand-brown hover:text-orange-600 cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
                   <RiPhoneLine className="mr-2" />
-                  (916) 841-4316
+                  (279) 237-9912
                 </a>
                 <a href="mailto:CraftLine.Prodeck@gmail.com" className="flex items-center text-brand-brown hover:text-orange-600 cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
                   <RiMailLine className="mr-2" />
@@ -1230,9 +1230,9 @@ export default function HomePage() {
           <div className="border-t border-brand-brown/50 pt-4">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
               <div className="flex flex-wrap justify-center gap-6 items-center">
-                <a href="tel:9168414316" className="flex items-center text-stone-200 hover:text-white cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
+                <a href="tel:2792379912" className="flex items-center text-stone-200 hover:text-white cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
                   <RiPhoneLine className="mr-2" />
-                  (916) 841-4316
+                  (279) 237-9912
                 </a>
                 <a href="mailto:CraftLine.Prodeck@gmail.com" className="flex items-center text-stone-200 hover:text-white cursor-pointer font-medium transition-all duration-300 transform hover:scale-105">
                   <RiMailLine className="mr-2" />
