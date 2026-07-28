@@ -17,26 +17,26 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://craftlineprodeck.com'),
-  title: "CraftLine — Deck & Fence Installation, Repair & Composite Decking | Deck Builder Sacramento",
-  description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, wood staining, composite decking, porch restoration. Licensed, insured. Free estimates.",
-  keywords: ["deck builder Sacramento", "deck installation", "fence contractor", "composite decking", "fence repair", "deck restoration", "wood staining", "porch restoration", "pergola installation", "deck builder", "fence installation", "deck repair", "deck repair sacramento", "sacramento deck repair", "deck design", "deck railing", "sacramento balcony repair", "deck stairs repair", "deck cleaning carmichael"],
-  authors: [{ name: "CraftLine Deck & Fence" }],
+  title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
+  description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn. Custom composite decks, repairs and wood restoration.",
+  keywords: ["deck builder Sacramento", "deck installation", "Deck rebuild", "composite decking", "Deck repair", "deck restoration", "wood sanding and staining", "porch restoration", "pergola installation", "deck builder", "fence installation", "deck repair", "deck repair sacramento", "sacramento deck repair", "deck design", "deck railing", "sacramento balcony repair", "deck stairs repair", "deck cleaning carmichael"],
+  authors: [{ name: "CraftLine Decking" }],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "CraftLine - Deck & Fence Installation, Repair and Composite Decking | Deck Builder Sacramento",
-    description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, wood staining, composite decking, porch restoration.",
+    title: "CraftLine Decking | Deck Builder & Restoration Sacramento",
+    description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, Deck repair, Sanding and staining, Deck restoration, composite decking, porch restoration.",
     url: "https://craftlineprodeck.com",
-    siteName: "CraftLine Deck & Fence",
+    siteName: "CraftLine Decking",
     images: [
       {
         url: "/icon.png",
         width: 1200,
         height: 630,
-        alt: "CraftLine Deck & Fence Restoration",
+        alt: "CraftLine Decking Sacramento",
       },
     ],
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CraftLine - Deck & Fence Installation, Repair and Composite Decking | Deck Builder Sacramento",
+    title: "CraftLine Decking - Deck & Fence Installation, Repair and Composite Decking | Deck Builder Sacramento",
     description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, composite decking.",
     images: ["/icon.png"],
   },
