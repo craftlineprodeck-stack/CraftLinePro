@@ -37,22 +37,22 @@ export default function HomePage() {
     projectDetails: ''
   });
 
-  // First page: n5, 8, n6, n7, 10
-  // Second page: n1, n2, n4, 3, 9
+  // First page: n6, n1, n3, n5, n7
+  // Second page: n2, n2, n4, 3, n7
   const page1 = [
-    { url: '/n5.webp', caption: 'Porch Painting' },
-    { url: '/8.webp', caption: 'Modern Deck Design' },
-    { url: '/n6.webp', caption: 'Deck Refinishing' },
-    { url: '/n7.webp', caption: 'Deck Painting' },
-    { url: '/10.webp', caption: 'Wood Deck Refinishing' }
+    { url: '/n6.jpeg', caption: 'Deck Restoration' },
+    { url: '/n1.jpeg', caption: 'Custom Deck Build' },
+    { url: '/n3.jpeg', caption: 'Deck staircase remodeling' },
+    { url: '/n5.jpeg', caption: 'Hardwood porch restoration' },
+    { url: '/n7.webp', caption: 'Hardwood deck refinishing' }
   ];
 
   const page2 = [
-    { url: '/n1.webp', caption: 'Deck Staining' },
+    { url: '/n2.jpeg', caption: 'Bamboo Deck Repair & Restoration' },
     { url: '/n2.webp', caption: 'Porch Restoration' },
-    { url: '/n4.webp', caption: 'Fence Staining' },
+    { url: '/n4.jpeg', caption: 'Deck Sanding & Staining' },
     { url: '/3.webp', caption: 'Porch Refresh' },
-    { url: '/9.webp', caption: 'Deck Restoration' }
+    { url: '/n7.jpeg', caption: 'Deck Staining and Sanding' }
   ];
 
   // Combined array for mobile
