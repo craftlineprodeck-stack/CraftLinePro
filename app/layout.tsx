@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "CraftLine Decking | Deck Builder & Restoration Sacramento",
-    description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, Deck repair, Sanding and staining, Deck restoration, composite decking, porch restoration.",
+    title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
+    description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn. Custom composite decks, repairs and wood restoration.",
     url: "https://craftlineprodeck.com",
     siteName: "CraftLine Decking",
     images: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CraftLine Decking - Deck & Fence Installation, Repair and Composite Decking | Deck Builder Sacramento",
-    description: "Professional deck builder and fence contractor in Sacramento. Expert deck installation, fence repair, composite decking.",
+    title: "CCraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
+    description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn.",
     images: ["/icon.png"],
   },
   alternates: {
