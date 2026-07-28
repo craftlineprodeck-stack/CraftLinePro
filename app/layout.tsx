@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CCraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
+    title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
     description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn.",
     images: ["/icon.png"],
   },
