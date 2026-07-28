@@ -1,6 +1,6 @@
-# CraftLine — Deck & Fence Restoration
+# CraftLine Decking — Custom Decks, Repairs & Restoration
 
-Professional deck, porch, and fence restoration services in Sacramento and surrounding areas.
+Professional deck building, composite decking, and restoration services in Sacramento, Folsom, Granite Bay, Roseville and Auburn.
 
 ## 🚀 Quick Start
 
