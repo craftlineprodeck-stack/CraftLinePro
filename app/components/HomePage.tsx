@@ -949,8 +949,8 @@ export default function HomePage() {
                   'Auburn',
                   'Lincoln',
                   'Granite Bay',
-                  'El Dorado Hills'
-                  'Placerville'
+                  'El Dorado Hills',
+                  'Placerville',
                 ].map((area, index) => (
                   <div key={index} className="w-full p-3 bg-white rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer touch-manipulation">
                     <div className="flex items-center">
@@ -984,8 +984,8 @@ export default function HomePage() {
                   'Auburn',
                   'Lincoln',
                   'Granite Bay',
-                  'El Dorado Hills'
-                  'Placerville'
+                  'El Dorado Hills',
+                  'Placerville',
                 ].map((area, index) => (
                   <div key={index} className="flex items-center p-3 bg-white rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer">
                     <div className="w-3 h-3 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mr-3 flex-shrink-0 shadow-sm"></div>
