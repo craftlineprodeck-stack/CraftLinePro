@@ -329,10 +329,10 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <div className="text-xl sm:text-2xl font-bold text-brand-brown font-heading tracking-wide uppercase">
-                  CRAFTLINE
+                  CraftLine
                 </div>
                 <div className="text-xs sm:text-sm text-brand-muted font-medium tracking-wide uppercase">
-                  Deck & Fence
+                  Decking
                 </div>
               </div>
             </button>
@@ -391,10 +391,10 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <div className="text-2xl xl:text-3xl font-bold text-brand-brown font-heading tracking-wide uppercase">
-                  CRAFTLINE
+                  CraftLine
                 </div>
                 <div className="text-sm xl:text-base text-brand-muted font-medium tracking-wide uppercase">
-                  Deck & Fence
+                  Decking
                 </div>
               </div>
             </button>
@@ -562,12 +562,12 @@ export default function HomePage() {
           <div className="relative z-10 text-white max-w-lg mx-auto">
             {/* Tagline */}
             <p className="text-sm sm:text-base font-medium text-stone-200 mb-4 uppercase tracking-wider" style={{textShadow: '1px 1px 4px rgba(0, 0, 0, 0.9)'}}>
-              Your deck & fence experts in Sacramento
+              Your deck building & restoration experts in Sacramento
             </p>
             
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl font-bold mb-8 leading-tight text-white font-heading tracking-wide uppercase" style={{textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5)'}}>
-              DECK OR PORCH RESTORATION MADE SIMPLE
+              CUSTOM DECKS & DECK RESTORATION MADE SIMPLE
             </h1>
             
             {/* Benefits with Icons */}
@@ -606,11 +606,11 @@ export default function HomePage() {
         <div className="hidden md:block w-full max-w-6xl mx-auto px-6 text-center text-white relative z-10">
           {/* Tagline */}
           <p className="text-lg md:text-xl font-medium text-stone-200 mb-6 uppercase tracking-wider" style={{textShadow: '2px 2px 6px rgba(0, 0, 0, 0.9)'}}>
-            Your deck & fence experts in Sacramento
+            Your deck building & restoration experts in Sacramento
           </p>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white font-heading tracking-wide uppercase" style={{textShadow: '3px 3px 10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6)'}}>
-            DECK OR PORCH RESTORATION MADE SIMPLE
+            CUSTOM DECKS & DECK RESTORATION MADE SIMPLE
           </h1>
 
           {/* Desktop Benefits with Icons */}
@@ -648,9 +648,9 @@ export default function HomePage() {
       <section id="why-choose-us" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-brown mb-6 font-heading tracking-wide uppercase">WHY CHOOSE CRAFTLINE</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-brown mb-6 font-heading tracking-wide uppercase">WHY CHOOSE CraftLine Decking</h2>
             <p className="text-xl text-brand-muted max-w-3xl mx-auto leading-relaxed">
-              Experience the difference that comes from working with Sacramento's most trusted deck and fence restoration specialists
+              Experience the difference that comes from working with Sacramento's most trusted deck building and restoration specialists
             </p>
           </div>
 
@@ -840,7 +840,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-brown mb-8 font-heading tracking-wide uppercase">EXTERIOR WOOD MAINTENANCE & RESTORATION</h2>
           <p className="text-lg text-brand-text leading-relaxed">
-            At CraftLine, we know how to keep your decks, fences, and porches looking their best. With years of hands-on experience, our team restores and protects wood surfaces through professional washing, sanding, staining, sealing, and repairs — ensuring lasting strength and beauty.
+            At CraftLine Decking, we know how to keep your decks, composite surfaces, and outdoor structures looking their best. With years of hands-on experience, our team restores and protects wood surfaces through professional washing, sanding, staining, sealing, and repairs — ensuring lasting strength and beauty.
           </p>
         </div>
       </section>
@@ -946,10 +946,11 @@ export default function HomePage() {
                   'Roseville', 
                   'Folsom',
                   'Rocklin',
-                  'Elk Grove',
+                  'Auburn',
                   'Lincoln',
                   'Granite Bay',
                   'El Dorado Hills'
+                  'Placerville'
                 ].map((area, index) => (
                   <div key={index} className="w-full p-3 bg-white rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer touch-manipulation">
                     <div className="flex items-center">
@@ -980,10 +981,11 @@ export default function HomePage() {
                   'Roseville',
                   'Folsom',
                   'Rocklin',
-                  'Elk Grove',
+                  'Auburn',
                   'Lincoln',
                   'Granite Bay',
                   'El Dorado Hills'
+                  'Placerville'
                 ].map((area, index) => (
                   <div key={index} className="flex items-center p-3 bg-white rounded-lg hover:bg-orange-50 transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer">
                     <div className="w-3 h-3 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mr-3 flex-shrink-0 shadow-sm"></div>
@@ -1053,7 +1055,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-brand-brown mb-4 font-heading tracking-wide uppercase">REQUEST YOUR FREE ESTIMATE</h2>
-            <p className="text-xl text-brand-muted">Ready to restore your deck, porch, or fence? Get started today!</p>
+            <p className="text-xl text-brand-muted">Ready to build or restore your deck? Get started today!</p>
           </div>
           
           <div className="bg-brand-beige p-8 rounded-xl shadow-lg">
@@ -1169,7 +1171,7 @@ export default function HomePage() {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-brand-text placeholder-gray-400 bg-white resize-vertical ${
                     formErrors.projectDetails ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-orange-500 focus:border-orange-500'
                   }`}
-                  placeholder="Please describe your deck, porch, or fence restoration project..."
+                  placeholder="Please describe your deck building or restoration project..."
                 ></textarea>
                 {formErrors.projectDetails && (
                   <p className="text-red-600 text-sm mt-1">{formErrors.projectDetails}</p>
@@ -1210,10 +1212,10 @@ export default function HomePage() {
             <div className="flex justify-center mb-4">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-white font-heading tracking-wide uppercase">
-                  CRAFTLINE
+                  CraftLine
                 </div>
                 <div className="text-sm md:text-base text-stone-200 font-medium tracking-wide uppercase">
-                  Deck & Fence
+                  Decking
                 </div>
               </div>
             </div>
@@ -1221,10 +1223,10 @@ export default function HomePage() {
           </div>
           
           <p className="text-stone-200 mb-4 font-medium">
-            Professional deck, porch, and fence restoration services
+            Professional deck building, composite decking, and restoration services
           </p>
           <p className="text-stone-300 text-sm mb-4">
-            Serving Sacramento, Roseville, Folsom, West Sacramento, Rocklin, Elk Grove, and El Dorado Hills
+            Serving Sacramento, Roseville, Folsom, West Sacramento, Auburn, Granite Bay, El Dorado Hills and surrounding areas
           </p>
 
           <div className="border-t border-brand-brown/50 pt-4">
