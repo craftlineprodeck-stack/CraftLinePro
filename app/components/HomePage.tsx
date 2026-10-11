@@ -23,6 +23,58 @@ import {
 } from 'react-icons/ri';
 import { FaYelp, FaGoogle } from 'react-icons/fa';
 
+// ---- Contact form spam protection ----
+
+// Known spam sender names (compared after lowercasing and stripping non-letters)
+const BLOCKED_NAMES = ['jeremyeurok', 'robertsom'];
+
+const normalizeName = (value: string) => value.toLowerCase().replace(/[^a-z]/g, '');
+
+const levenshtein = (a: string, b: string) => {
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+      );
+    }
+  }
+  return dp[a.length][b.length];
+};
+
+// Matches exact names, names containing a blocked name, and close variants (e.g. "JeremyEurock", "Robert Somm")
+const isBlockedName = (value: string) => {
+  const name = normalizeName(value);
+  if (!name) return false;
+  return BLOCKED_NAMES.some(blocked =>
+    name === blocked ||
+    name.includes(blocked) ||
+    (name.length >= blocked.length - 2 && levenshtein(name, blocked) <= 2)
+  );
+};
+
+// Valid US number: 10 digits, or 11 digits starting with 1 (NANP: area code and exchange can't start with 0/1)
+const isValidUSPhone = (value: string) => {
+  let digits = value.replace(/\D/g, '');
+  if (digits.length === 11 && digits.startsWith('1')) digits = digits.slice(1);
+  return /^[2-9]\d{2}[2-9]\d{6}$/.test(digits);
+};
+
+const SPAM_CONTENT_PATTERNS = [
+  /https?:\/\//i,
+  /www\./i,
+  /telegra\.ph/i,
+  /\bt\.me\//i,
+  /\b[a-z0-9-]+\.(com|net|org|info|biz|ru|ph|io|xyz|top|site|online|link|click|shop|me|co)\b(\/|\s|$)/i,
+  /\$\s?50,?000/,
+  /\bearn(s|ed|ing|ings)?\b/i,
+];
+
+const containsSpamContent = (value: string) => SPAM_CONTENT_PATTERNS.some(pattern => pattern.test(value));
+
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(1); // Desktop: Start at middle duplicate
@@ -199,13 +251,12 @@ export default function HomePage() {
         break;
 
       case 'phone':
-        const cleanPhone = value.replace(/[\s\-\(\)\.]/g, '');
-        if (value.length > 0 && cleanPhone.length < 10) {
-          error = 'Phone number must be at least 10 digits';
-        } else if (value.length > 20) {
+        if (value.length > 20) {
           error = 'Phone number is too long';
         } else if (value.length > 0 && !/^[\d\s\-\(\)\.+]+$/.test(value)) {
           error = 'Phone number contains invalid characters';
+        } else if (value.length > 0 && !isValidUSPhone(value)) {
+          error = 'Please enter a valid 10-digit US phone number';
         }
         break;
 
@@ -222,11 +273,71 @@ export default function HomePage() {
           error = 'Project details must be at least 10 characters';
         } else if (value.length > 2000) {
           error = 'Project details are too long (max 2000 characters)';
+        } else if (containsSpamContent(value)) {
+          error = 'Please remove links, URLs, or promotional content from your message';
         }
         break;
     }
 
     setFormErrors(prev => ({ ...prev, [name]: error }));
+  };
+
+  const setFormStatus = (text: string, tone: 'info' | 'success' | 'error') => {
+    const s = document.getElementById('craftline-status');
+    if (!s) return;
+    const toneClass = {
+      info: 'bg-blue-100 text-blue-800',
+      success: 'bg-green-100 text-green-800',
+      error: 'bg-red-100 text-red-800'
+    }[tone];
+    s.style.display = 'block';
+    s.textContent = text;
+    s.className = `text-center text-lg font-medium mt-4 p-3 rounded-lg ${toneClass}`;
+  };
+
+  const resetContactForm = () => {
+    const form = document.getElementById('craftline-form') as HTMLFormElement;
+    if (form) form.reset();
+    setFormErrors({ name: '', phone: '', address: '', projectDetails: '' });
+  };
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const data = new FormData(e.currentTarget);
+    const get = (key: string) => String(data.get(key) ?? '').trim();
+
+    const name = get('name');
+    const phone = get('phone');
+    const details = get('projectDetails');
+    const honeypotFilled = get('bot_field') !== '' || get('website') !== '';
+
+    // Bots: honeypot filled or known spam name -> silently drop, but look successful
+    if (honeypotFilled || isBlockedName(name)) {
+      e.preventDefault();
+      setFormStatus('✅ Request sent. We will contact you shortly!', 'success');
+      resetContactForm();
+      return;
+    }
+
+    if (!isValidUSPhone(phone)) {
+      e.preventDefault();
+      setFormErrors(prev => ({ ...prev, phone: 'Please enter a valid 10-digit US phone number' }));
+      setFormStatus('Please enter a valid 10-digit US phone number.', 'error');
+      return;
+    }
+
+    if (containsSpamContent(details)) {
+      e.preventDefault();
+      setFormErrors(prev => ({ ...prev, projectDetails: 'Please remove links, URLs, or promotional content from your message' }));
+      setFormStatus('Your message contains links or blocked content. Please remove them and try again.', 'error');
+      return;
+    }
+
+    // Legitimate lead: let the native POST go to the Apps Script (sends email + Telegram)
+    setFormStatus('Sending…', 'info');
+    setTimeout(() => {
+      setFormStatus('✅ Request sent. We will contact you shortly!', 'success');
+      resetContactForm();
+    }, 1500);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -1069,21 +1180,7 @@ export default function HomePage() {
               method="POST"
               encType="multipart/form-data"
               target="hidden_iframe"
-              onSubmit={() => {
-                const s = document.getElementById('craftline-status');
-                if (s) {
-                  s.style.display = 'block';
-                  s.textContent = 'Sending…';
-                  s.className = 'text-center text-lg font-medium mt-4 p-3 rounded-lg bg-blue-100 text-blue-800';
-                  setTimeout(() => {
-                    s.textContent = '✅ Request sent. We will contact you shortly!';
-                    s.className = 'text-center text-lg font-medium mt-4 p-3 rounded-lg bg-green-100 text-green-800';
-                    const form = document.getElementById('craftline-form') as HTMLFormElement;
-                    if (form) form.reset();
-                  }, 1500);
-                }
-                return true;
-              }}
+              onSubmit={handleFormSubmit}
               className="space-y-5"
             >
               <div>
@@ -1116,7 +1213,7 @@ export default function HomePage() {
                   minLength={10}
                   maxLength={20}
                   pattern="^[\d\s\-\(\)\.+]+$"
-                  title="Please enter a valid phone number (10-20 digits, spaces, dashes, parentheses allowed)"
+                  title="Please enter a valid 10-digit US phone number, e.g. (916) 555-0123"
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-brand-text placeholder-gray-400 bg-white ${
                     formErrors.phone ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-orange-500 focus:border-orange-500'
@@ -1128,7 +1225,19 @@ export default function HomePage() {
                 )}
               </div>
 
-              {/* Honeypot field - hidden from humans, visible to bots */}
+              {/* Honeypot fields - hidden from humans, visible to bots. Any value silently blocks the submission. */}
+              <div style={{display: 'none'}} aria-hidden="true">
+                <label htmlFor="bot_field">Leave this field empty</label>
+                <input
+                  type="text"
+                  id="bot_field"
+                  name="bot_field"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  defaultValue=""
+                />
+              </div>
+
               <div style={{position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none'}} aria-hidden="true">
                 <label>Website</label>
                 <input
