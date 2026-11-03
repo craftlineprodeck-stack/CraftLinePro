@@ -1,108 +1,53 @@
 import HomePage from './components/HomePage';
 
 // JSON-LD Schema for SEO
+const cities = [
+  'Sacramento', 'Fair Oaks', 'Folsom', 'Orangevale', 'Granite Bay', 'Citrus Heights',
+  'Roseville', 'Rocklin', 'El Dorado Hills', 'Auburn',
+];
+
+const services = [
+  { name: 'Deck Building', description: 'Custom Redwood and Trex composite decks with railings and stairs, built on solid framing.' },
+  { name: 'Redwood Deck Restoration', description: 'Deep, even sanding, fastener reset, board replacement and a penetrating oil or stain finish.' },
+  { name: 'Ipe & Hardwood Deck Restoration', description: 'Restoration, board replacement and oil maintenance for Ipe, Cumaru, Tigerwood, Garapa and bamboo decks.' },
+  { name: 'Deck Repair & Framing', description: 'Board replacement, rotten wood repair, joist and frame reinforcement.' },
+  { name: 'Deck Railings & Stairs', description: 'Redwood, composite and aluminum railings, new and rebuilt deck stairs.' },
+  { name: 'Pergola Construction', description: 'Redwood pergolas built to match your deck.' },
+];
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HomeAndConstructionBusiness",
   "@id": "https://craftlineprodeck.com/#organization",
-  "name": "CraftLine Deck & Fence",
-  "alternateName": "CraftLine",
-  "description": "Professional deck, porch, and fence restoration services in Sacramento and surrounding areas. Licensed and insured with quality workmanship.",
+  "name": "CraftLine Decking",
+  "legalName": "CraftLine LLC",
+  "description": "Deck builder and deck restoration company in the Sacramento area: Redwood and Trex deck building, Redwood restoration, Ipe and exotic hardwood restoration, deck repair, railings and stairs.",
   "url": "https://craftlineprodeck.com/",
-  "telephone": "(279) 237-9912",
-  "email": "CraftLine.Prodeck@gmail.com",
+  "telephone": "+1-279-237-9912",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Sacramento",
     "addressRegion": "CA",
     "addressCountry": "US"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 38.7816,
-    "longitude": -121.4944
+  "areaServed": cities.map((name) => ({ "@type": "City", "name": name, "containedInPlace": { "@type": "State", "name": "California" } })),
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Deck Services",
+    "itemListElement": services.map((s) => ({
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": s.name, "description": s.description }
+    }))
   },
-  "areaServed": [
-    { "@type": "City", "name": "Sacramento", "addressRegion": "CA" },
-    { "@type": "City", "name": "Roseville", "addressRegion": "CA" },
-    { "@type": "City", "name": "Folsom", "addressRegion": "CA" },
-    { "@type": "City", "name": "Rocklin", "addressRegion": "CA" },
-    { "@type": "City", "name": "Elk Grove", "addressRegion": "CA" },
-    { "@type": "City", "name": "Lincoln", "addressRegion": "CA" },
-    { "@type": "City", "name": "Granite Bay", "addressRegion": "CA" },
-    { "@type": "City", "name": "El Dorado Hills", "addressRegion": "CA" }
-  ],
-  "serviceType": [
-    "Deck Restoration",
-    "Fence Repair",
-    "Wood Staining",
-    "Porch Restoration",
-    "Pergola Installation"
-  ],
   "priceRange": "$$",
-  "image": "https://craftlineprodeck.com/icon.png",
+  "image": "https://craftlineprodeck.com/hero.webp",
   "logo": "https://craftlineprodeck.com/icon.png",
   "sameAs": [
     "https://www.instagram.com/craftline.sacramento",
     "https://yelp.to/1YJwTMiSXR",
     "https://maps.app.goo.gl/x312YhivPyDcfheA8"
   ],
-  "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
-  "paymentAccepted": "Cash, Check, Credit Card",
-  "currenciesAccepted": "USD"
-};
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Home Improvement",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CraftLine Deck & Fence",
-    "url": "https://craftlineprodeck.com/"
-  },
-  "areaServed": {
-    "@type": "State",
-    "name": "California"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Deck & Fence Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Deck Restoration",
-          "description": "Professional pressure washing, sanding, staining and sealing as well as board and structural post replacement."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Wooden Porch Restoration",
-          "description": "Expert repairs, sanding and refinishing with paint or stain to restore beauty and durability to your porch."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Fence Repair & Staining",
-          "description": "Post replacement, board repairs, pressure washing and professional staining to extend fence life and curb appeal."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pergola Installation",
-          "description": "Custom pergolas and shade structures built with quality craftsmanship to enhance your outdoor living space."
-        }
-      }
-    ]
-  }
+  "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-16:00"
 };
 
 export default function Home() {
@@ -112,10 +57,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
       <HomePage />

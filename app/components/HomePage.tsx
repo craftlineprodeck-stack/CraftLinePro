@@ -390,7 +390,7 @@ export default function HomePage() {
       title: 'TRUSTED BY HOMEOWNERS',
       icon: RiHeart3Line,
       description: 'Proudly chosen by local families for our care, trust, and proven results.',
-      details: 'With hundreds of satisfied customers across Sacramento, our reputation speaks for itself through word-of-mouth referrals.'
+      details: 'Our reputation is built on word-of-mouth referrals and 5-star reviews from homeowners across the Sacramento area.'
     }
   ];
 
@@ -1155,7 +1155,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center justify-center">
               <RiShieldCheckLine className="text-xl mr-2" />
-              <span className="text-base">Licensed &amp; Insured</span>
+              <span className="text-base">Owner-Operated</span>
             </div>
           </div>
         </div>
@@ -1377,7 +1377,7 @@ export default function HomePage() {
             </div>
             
             <p className="text-stone-300 text-sm">
-              Copyright © CraftLine. All rights reserved. Licensed &amp; Insured.
+              Copyright © CraftLine Decking. All rights reserved.
             </p>
           </div>
         </div>

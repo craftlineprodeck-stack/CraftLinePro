@@ -17,9 +17,8 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://craftlineprodeck.com'),
-  title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
-  description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn. Custom composite decks, repairs and wood restoration.",
-  keywords: ["deck builder Sacramento", "deck installation", "Deck rebuild", "composite decking", "Deck repair", "deck restoration", "wood sanding and staining", "porch restoration", "pergola installation", "deck builder", "fence installation", "deck repair", "deck repair sacramento", "sacramento deck repair", "deck design", "deck railing", "sacramento balcony repair", "deck stairs repair", "deck cleaning carmichael"],
+  title: "Deck Builder & Restoration Sacramento | CraftLine Decking",
+  description: "Deck builder in Sacramento, Fair Oaks and Folsom. Redwood and Trex decks, Redwood deck restoration, Ipe & hardwood restoration, deck repair and railings.",
   authors: [{ name: "CraftLine Decking" }],
   icons: {
     icon: "/icon.png",
@@ -27,8 +26,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
-    description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn. Custom composite decks, repairs and wood restoration.",
+    title: "Deck Builder & Restoration Sacramento | CraftLine Decking",
+    description: "Deck builder in Sacramento, Fair Oaks and Folsom. Redwood and Trex decks, Redwood deck restoration, Ipe & hardwood restoration, deck repair and railings.",
     url: "https://craftlineprodeck.com",
     siteName: "CraftLine Decking",
     images: [
@@ -44,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CraftLine Decking | Deck Builder & Restoration Sacramento, Folsom & Granite Bay",
-    description: "Licensed deck builder and restoration contractor serving in Sacramento, Folsom, Granite Bay, Roseville and Auburn.",
+    title: "Deck Builder & Restoration Sacramento | CraftLine Decking",
+    description: "Deck builder in Sacramento, Fair Oaks and Folsom. Redwood and Trex decks, Redwood deck restoration, Ipe & hardwood restoration, deck repair and railings.",
     images: ["/icon.png"],
   },
   alternates: {
