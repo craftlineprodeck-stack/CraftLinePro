@@ -1,0 +1,15 @@
+# Skip Netlify builds when only docs / Claude rules changed (*.md, .claude/).
+# Exit 0 = skip build, any other exit = build. On any error the build runs (safe default).
+# Production (main): compare with the last deployed commit.
+# Deploy previews / branches: compare with where the branch split from main.
+[build]
+  ignore = """
+    if [ "$CONTEXT" = "production" ]; then
+      BASE="$CACHED_COMMIT_REF"
+    else
+      git fetch -q --depth=200 origin main || exit 1
+      BASE=$(git merge-base FETCH_HEAD HEAD) || exit 1
+    fi
+    [ -n "$BASE" ] || exit 1
+    git diff --quiet "$BASE" HEAD -- . ':(exclude)*.md' ':(exclude).claude/'
+  """
