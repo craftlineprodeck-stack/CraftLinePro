@@ -7,12 +7,12 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - **Owners / crew:** Alex and Viktor. Own crew, same people from estimate to final walkthrough.
 - **Phone:** (279) 237-9912 · **Email:** CraftLine.Prodeck@gmail.com (never render as plain text on the site — form only)
 - **Site:** https://craftlineprodeck.com · **Instagram:** @craftline.sacramento
-- **Positioning:** "Decks are all we do" + Ipe & exotic hardwood restoration experts (a niche no local competitor covers).
+- **Positioning:** "Decks are all we do." Core volume = Redwood decks (building + restoration) and Trex composite decks — lead with these. Ipe & exotic hardwood restoration is a separate **premium line** we highlight as expertise (no local competitor covers it), not the main business.
 
 ## Services
 - **Building:** Redwood decks, Trex composite decks (PVC later).
 - **Redwood restoration:** deep sanding + stain/oil, board replacement, fastener reset, frame repair and reinforcement.
-- **Ipe & hardwood restoration (premium):** Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo — restoration, board replacement, oil maintenance.
+- **Ipe & hardwood restoration (premium line, smaller volume):** Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo — restoration, board replacement, oil maintenance.
 - **Related:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
 - **Materials we name:** Messmer's UV Plus, Penofin, Armstrong Clark oils; Diablo SandNET abrasives; TrexPro.
 - **Do NOT offer:** patio enclosures, porch construction, painting decks with paint.
