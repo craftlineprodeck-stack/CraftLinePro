@@ -7,15 +7,20 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - **Owners / crew:** Alex and Viktor. Own crew, same people from estimate to final walkthrough.
 - **Phone:** (279) 237-9912 · **Email:** CraftLine.Prodeck@gmail.com (never render as plain text on the site — form only)
 - **Site:** https://craftlineprodeck.com · **Instagram:** @craftline.sacramento
-- **Positioning:** "Decks are all we do." Core volume = Redwood decks (building + restoration) and Trex composite decks — lead with these. Ipe & exotic hardwood restoration is a separate **premium line** we highlight as expertise (no local competitor covers it), not the main business.
+- **Positioning:** "Decks are all we do." Full deck contractor: building/rebuild first, then repair, then restoration. See Services for order and current emphasis.
 
-## Services
-- **Building:** Redwood decks, Trex composite decks (PVC later).
-- **Redwood restoration:** deep sanding + stain/oil, board replacement, fastener reset, frame repair and reinforcement.
-- **Ipe & hardwood restoration (premium line, smaller volume):** Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo — restoration, board replacement, oil maintenance.
-- **Related:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
-- **Materials we name:** Messmer's UV Plus, Penofin, Armstrong Clark oils; Diablo SandNET abrasives; TrexPro.
-- **Do NOT offer:** patio enclosures, porch construction, painting decks with paint.
+## Services (owner's order — use it for nav, service lists, footer)
+1. **Deck Building & Rebuild** — main focus of the company. Materials: Redwood, composite (**Trex #1, TimberTech #2**), exotic hardwood (Ipe etc.).
+2. **Deck Repair** — board replacement, framing / joist / post repair, resurfacing (new boards on an existing frame).
+3. **Restoration & Refinishing** — two separate categories:
+   - **Redwood restoration** — biggest volume.
+   - **Ipe & hardwood restoration** — premium line; pages explain why dense hardwood needs its own process (Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo; board replacement, oil maintenance).
+   - **No composite restoration** — composite is not restored; never offer it.
+4. **Add-ons:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
+- **Current emphasis (until ~Mar/Apr 2027):** homepage hero, featured projects and reviews lean on **repair and restoration** (our strongest cases). Menu order stays as above. Emphasis must be switchable in data (featured order), not by redesign — from Mar/Apr shift toward building as build cases come in.
+- Reference for structure: SIA Builds.
+- **Materials we name:** Messmer's UV Plus, Penofin, Armstrong Clark oils; Diablo SandNET abrasives; Trex, TimberTech.
+- **Do NOT offer:** patio enclosures, porch construction, painting decks with paint, composite restoration.
 
 ## Text rules (hard)
 - All site copy in **English**.
@@ -48,10 +53,10 @@ Instructions for Claude Code working in this repository. Read fully before any c
 | URL | Page | Main query |
 |---|---|---|
 | `/` | Home | deck builder Sacramento |
-| `/ipe-hardwood-deck-restoration` | Ipe & hardwood | Ipe deck restoration Sacramento |
-| `/redwood-deck-restoration` | Redwood restoration | deck restoration / sanding and staining |
-| `/deck-building` | Building (Redwood, Trex) | deck builder / Trex deck installation |
-| `/deck-repair` | Repair, boards, framing | deck repair |
+| `/deck-building` | 1. Building & rebuild (Redwood, Trex, TimberTech, hardwood) | deck builder / Trex deck installation |
+| `/deck-repair` | 2. Repair, boards, framing, resurfacing | deck repair |
+| `/redwood-deck-restoration` | 3a. Redwood restoration | deck restoration / sanding and staining |
+| `/ipe-hardwood-deck-restoration` | 3b. Ipe & hardwood restoration | Ipe deck restoration Sacramento |
 | `/deck-railings-stairs` | Railings & stairs | deck railing installation |
 | `/pergolas` | Pergolas | pergola builder |
 | `/areas/[city]` | City pages | deck builder + city |
