@@ -1,12 +1,10 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { site } from '@/data/site';
 
+// Never block /_next/ — only /api/.
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/'],
-    },
-    sitemap: 'https://craftlineprodeck.com/sitemap.xml',
-  }
+    rules: { userAgent: '*', allow: '/', disallow: ['/api/'] },
+    sitemap: `${site.url}/sitemap.xml`,
+  };
 }

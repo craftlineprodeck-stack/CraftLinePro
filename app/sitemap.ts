@@ -1,14 +1,8 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { site } from '@/data/site';
+import { getSitemapEntries } from '@/lib/content';
 
+// Only `ready` pages, services, cities and projects. Empty while everything is a placeholder.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://craftlineprodeck.com'
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-  ]
+  return getSitemapEntries().map(({ path }) => ({ url: path === '/' ? site.url : `${site.url}${path}` }));
 }

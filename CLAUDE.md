@@ -35,6 +35,8 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - General city: **Sacramento**.
 - Primary: **Fair Oaks, Folsom**. Then **Orangevale, Granite Bay** (premium), **Citrus Heights** (secondary).
 - Expansion: Roseville, Rocklin, El Dorado Hills, Auburn.
+- Other focus cities (pages, lower priority): Rancho Cordova, Gold River, Loomis, Sacramento (Land Park, Arden Park, Sierra Oaks as sections), East Sacramento.
+- All 14 focus cities have pages, grouped into 4 regions (see Service areas). Priority decides order in lists, schema, homepage mentions, service × city pages and ad budget — not whether a city gets a page.
 - A city page needs content unique to that city (own projects/reviews, or local permits, typical decks and lots, HOAs, nearest projects, local FAQ). Service × city pages come after launch where a city has 2+ projects of that service.
 
 ## Stack
@@ -66,7 +68,7 @@ Instructions for Claude Code working in this repository. Read fully before any c
 | `/before-and-after` | Before & After — separate page, slider pairs (caption: service — material — city) | deck restoration before and after |
 | `/reviews`, `/about`, `/contact`, `/deck-academy`, `/blog`, `/privacy` | Utility | — |
 
-**Main menu (like ION Builders):** About · Services ▾ (owner's order) · Resources ▾ (Materials, Blog) · Service Areas · Projects · Before & After · Contact · phone button. Keep navigation simple: Before & After is its own page, not mixed into the projects gallery. Blog item appears only once the first article exists.
+**Main menu (like ION Builders):** About · Services ▾ (owner's order) · Resources ▾ (Materials, Blog) · Service Areas ▾ (cities grouped by the 4 regions — desktop: 4 columns; mobile: region accordion; last item "All Service Areas" → `/areas`) · Projects · Before & After · Contact · phone button. Keep navigation simple: Before & After is its own page, not mixed into the projects gallery. Blog item appears only once the first article exists.
 Before/after pairs are flagged inside project data (one source of photos, no duplicate files); a pair only counts if both shots are from the same spot and angle.
 **Phase 2 (after launch):** cost calculator — do not build at launch.
 
@@ -74,7 +76,13 @@ Dec 1 launch minimum: home, 5 service pages (building, repair, Redwood restorati
 
 Homepage: 8–10 blocks, no background video in hero, animation only where functional.
 
-**Service areas:** `/areas` hub (menu item, no dropdown) groups city cards into 4 regions — East Sacramento County · Folsom & El Dorado Hills · Placer County · Sacramento. A card appears only when its city page exists. Sacramento neighborhoods (Land Park, Arden Park, Sierra Oaks) are sections of the Sacramento page; East Sacramento has its own page. Each city page ends with 3–4 nearby-city links; footer has one compact line of city links. City page rule: unique local content only (own projects/reviews or real local specifics) — never a template with the city name swapped. Rollout order and data: project doc `Geo Analysis.md`.
+**Service areas:** 14 focus cities, each with its own page under `/areas/[city]`, grouped into 4 regions:
+- **East Sacramento County:** Fair Oaks, Orangevale, Citrus Heights, Rancho Cordova, Gold River
+- **Folsom & El Dorado Hills:** Folsom, El Dorado Hills
+- **Placer County:** Granite Bay, Roseville, Rocklin, Loomis, Auburn
+- **Sacramento:** Sacramento, East Sacramento
+
+Every city page exists from the start as a placeholder (noindex, out of the sitemap) until its data has `ready: true`. The menu dropdown lists all 14 cities. The `/areas` hub groups city cards into the same 4 regions, but a card, the footer city link and the sitemap entry appear only for `ready` cities. Sacramento neighborhoods (Land Park, Arden Park, Sierra Oaks) are sections of the Sacramento page; East Sacramento has its own page. Each city page ends with 3–4 nearby-city links; footer has one compact line of city links. City page rule: unique local content only (own projects/reviews or real local specifics) — never a template with the city name swapped. Rollout order and data: project doc `Geo Analysis.md`.
 
 **City page template:** city-specific H1 → short form → unique intro → services for the city → permits (City of Folsom / Sacramento County for Fair Oaks & Orangevale) → projects in city → reviews from city → pricing → neighborhoods (only where we worked) → FAQ 3–5 → form → nearby cities.
 
