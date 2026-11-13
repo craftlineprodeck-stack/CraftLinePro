@@ -14,12 +14,12 @@ export const project: Project = {
   completed: '2026-07',
   areaSqFt: 900,
   days: 4,
-  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Padre Brown' },
+  finish: { kind: 'stain', type: 'water-based semi-transparent stain', color: 'Padre Brown' },
   summary: 'Three-part Redwood deck repaired before a home sale: new boards, rebuilt steps, sanding and stain.',
   before:
     'An old three-part Redwood deck — front, back and side — with rotted boards and damaged steps. The client was getting the house ready to sell.',
   whatWeDid:
-    'We replaced the damaged boards using a hidden fastening system from under the deck, repaired and replaced steps, and made spot repairs on the wood railings. Then we fully sanded every part of the deck, all the stairs and the railings, and applied two coats of semi-transparent stain.',
+    'We replaced the damaged boards using a hidden fastening system from under the deck, repaired and replaced steps, and made spot repairs on the wood railings. Then we fully sanded every part of the deck, all the stairs and the railings, and applied two coats of water-based semi-transparent stain.',
   todo: [],
   googleReview: true,
   coverId: '01',

@@ -13,11 +13,11 @@ export const project: Project = {
   completed: '2025-12',
   areaSqFt: 400,
   days: 3,
-  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'cedar natural tone' },
+  finish: { kind: 'stain', type: 'water-based semi-transparent stain', color: 'cedar natural tone' },
   summary: 'Deck machine-sanded, railings and stairs hand-sanded, knot holes repaired, two coats of stain.',
   before: 'A Redwood deck with a gray, weathered surface, along with its railings and staircase, all overdue for restoration.',
   whatWeDid:
-    'We machine-sanded the deck boards and hand-sanded the railings and stairs, bringing the wood back to its natural color. We made spot repairs of holes left by large knots and applied two coats of stain.',
+    'We machine-sanded the deck boards and hand-sanded the railings and stairs, bringing the wood back to its natural color. We made spot repairs of holes left by large knots and applied two coats of water-based semi-transparent stain.',
   todo: [],
   googleReview: true,
   coverId: '01',

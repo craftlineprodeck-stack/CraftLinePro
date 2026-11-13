@@ -14,7 +14,7 @@ export const project: Project = {
   areaSqFt: 500,
   areaApprox: true,
   days: 3,
-  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Red Garrison' },
+  finish: { kind: 'stain', type: 'water-based semi-transparent stain', color: 'Red Garrison' },
   summary: 'A large Redwood deck with railings and stairs, unstained for three years, fully sanded, re-screwed and finished in two coats of semi-transparent stain.',
   before: "A large Redwood deck with railings and stairs that hadn't been stained in three years.",
   whatWeDid:

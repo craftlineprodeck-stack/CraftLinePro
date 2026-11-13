@@ -13,12 +13,12 @@ export const project: Project = {
   completed: '2026-04',
   areaSqFt: 200,
   days: 5,
-  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'cedar natural tone' },
+  finish: { kind: 'stain', type: 'water-based semi-transparent stain', color: 'cedar natural tone' },
   summary: 'A freestanding Redwood deck built to exact custom dimensions, on poured footings, with built-in lighting.',
   before:
     "A returning client — we had restored and stained their fence earlier. They wanted a low-profile freestanding deck with lighting, built to their own dimensions, and the work had to be coordinated with the landscaping company redoing the backyard.",
   whatWeDid:
-    "We built a custom Redwood deck on poured footings, with built-in lighting and the client's exact dimensions, so it fits precisely between the fence and the concrete pad, and finished it with two coats of semi-transparent stain.",
+    "We built a custom Redwood deck on poured footings, with built-in lighting and the client's exact dimensions, so it fits precisely between the fence and the concrete pad, and finished it with two coats of water-based semi-transparent stain.",
   todo: [],
   googleReview: true,
   coverId: '01',
