@@ -6,11 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ignore-pattern 'scripts/optimize-*.js'",
-    "optimize-images": "node scripts/optimize-images.js",
-    "prebuild": "npm run optimize-images",
+    "lint": "eslint",
     "check:tokens": "node scripts/check-tokens.mjs",
-    "check": "npm run check:tokens && npm run lint && npm run build"
+    "check": "npm run check:tokens && npm run lint && npm run build",
+    "import-portfolio": "node scripts/import-portfolio.mjs"
   },
   "dependencies": {
     "next": "^16.2.6",
