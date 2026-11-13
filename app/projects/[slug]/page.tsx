@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { DraftNotice } from '@/components/projects/DraftNotice';
 import { projectCompleted } from '@/components/projects/ProjectFacts';
-import { formatFinish, getMaterialName, getProject, getProjectPlace, getProjects, getService } from '@/lib/content';
+import { finishCoats, formatFinish, getMaterialName, getProject, getProjectPlace, getProjects, getService } from '@/lib/content';
 import { pageMetadata } from '@/lib/metadata';
 import type { ProjectPhoto } from '@/data/types';
 
@@ -53,7 +53,7 @@ export default async function Page({ params }: Props) {
   ];
   if (project.areaSqFt) facts.push(['Area', `${project.areaApprox ? 'about ' : ''}${project.areaSqFt} sq ft`]);
   if (project.days) facts.push(['Time on site', `${project.days} ${project.days === 1 ? 'day' : 'days'}`]);
-  if (project.finish) facts.push(['Finish', formatFinish(project.finish)]);
+  if (project.finish) facts.push(['Finish', `${formatFinish(project.finish)}, ${finishCoats(project.finish)}`]);
   facts.push(['Completed', projectCompleted(project)]);
   facts.push([
     'Services',
@@ -88,7 +88,9 @@ export default async function Page({ params }: Props) {
               </div>
             ))}
           </dl>
-          {project.finish?.brand && <p className="mt-3 text-xs text-muted">Finish product: {project.finish.brand}</p>}
+          {project.finish?.kind === 'oil' && project.finish.brand && (
+            <p className="mt-3 text-xs text-muted">Hardwood oil: {project.finish.brand}</p>
+          )}
           <h2 className="mt-8 text-xl font-semibold text-slate">The deck before</h2>
           <p className="mt-2 text-ink">{project.before}</p>
           <h2 className="mt-6 text-xl font-semibold text-slate">What we did</h2>

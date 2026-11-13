@@ -13,7 +13,7 @@ export const project: Project = {
   completed: '2026-06',
   areaSqFt: 600,
   days: 3,
-  finish: { type: 'semi-transparent stain', color: 'Georgian Brick', brand: 'Woodluxe' },
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Georgian Brick' },
   summary: 'Worn stair treads and peeling stain sanded back and refinished in two coats of semi-transparent stain.',
   before:
     'Old stain was peeling and the wood on the stair treads was badly worn. The railings had held up fairly well but needed a fresh color matched to the deck. Some screws had worked loose.',

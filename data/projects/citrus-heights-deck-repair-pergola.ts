@@ -13,12 +13,12 @@ export const project: Project = {
   completed: '2026-10',
   areaSqFt: 1200,
   days: 6,
-  finish: { type: 'semi-transparent stain', color: 'Redwood', brand: 'Behr Premium' },
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Redwood' },
   summary: 'About half the lower deck boards replaced, steps rebuilt, pergola cleaned, and two coats of stain on everything.',
   before:
     'On the lower deck the boards had rotted — about half needed replacing — and the steps needed repair and new treads. A few boards were rotten on the upper deck under the pergola. All the wood was gray, dirty and starting to break down, the pergola had turned almost black, and the railing posts were loose.',
   whatWeDid:
-    'Lower deck: a major repair with board replacement, refitting the boards that could be saved, step repair, then full sanding and prep for stain. Upper deck: replaced damaged boards, re-fastened loose screws, spot fascia repairs, full sanding, and reinforced every railing post. Pergola: professional wash with cleaner and brightener plus spot sanding. Two coats of stain on every surface, then we reinstalled all the metal railings.',
+    'Lower deck: a major repair with board replacement, refitting the boards that could be saved, step repair, then full sanding and prep for stain. Upper deck: replaced damaged boards, re-fastened loose screws, spot fascia repairs, full sanding, and reinforced every railing post. Pergola: professional wash with cleaner and brightener plus spot sanding. Two coats of semi-transparent stain on every surface, then we reinstalled all the metal railings.',
   todo: [],
   googleReview: true,
   coverId: '01',

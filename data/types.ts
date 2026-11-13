@@ -57,8 +57,13 @@ export interface ProjectPhoto {
 }
 export interface BeforeAfterPair { beforeId: string; afterId: string; caption: string; } // ids of photos in the same project; same spot and angle
 
-// Finish type + color as shown in cases ("semi-transparent stain — Red Garrison"); brand goes to case details.
-export interface Finish { type: string; color?: string; brand?: string; }
+// Finish shown as type + color ("semi-transparent stain — Red Garrison").
+// Coats follow the kind (owner rule): water-based stain = 2 coats, oil = 1 coat — see FINISH_COATS.
+// Brand only for hardwood oils (Messmer's, Armstrong Clark, DeckWise, Penofin); never for stains.
+export type Finish =
+  | { kind: 'stain'; type: string; color: string }
+  | { kind: 'oil'; type: string; color?: string; brand?: string };
+export const FINISH_COATS: Record<Finish['kind'], number> = { stain: 2, oil: 1 };
 
 export interface Project {
   slug: string;

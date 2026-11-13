@@ -14,12 +14,12 @@ export const project: Project = {
   completed: '2026-09',
   areaSqFt: 1100,
   days: 7,
-  finish: { type: 'penetrating hardwood oil', color: 'Natural', brand: "Messmer's" },
+  finish: { kind: 'oil', type: 'penetrating hardwood oil', color: 'Natural', brand: "Messmer's" },
   summary: 'New code-built frame under the spa deck, Ipe relaid with stainless screws, and the whole three-part deck sanded and oiled.',
   before:
     'Three Ipe deck areas. The freestanding spa deck sat on a rotted, unsafe frame that had lost its level. Its boards had been damaged by earlier work: many extra holes, screws not made for hardwood, and a coating not meant for Ipe. On the lower main deck the boards were sun-faded under the same coating, and one board sat higher than the rest. The upper main deck had fresh, uncoated boards, but its railings were loose and not safe for children.',
   whatWeDid:
-    'Spa deck: we carefully removed all the Ipe boards and rebuilt the frame from pressure-treated lumber — stronger than the old one, built to code, with joist tape on top and tied to the concrete patio — and repaired the fascia. We filled more than a hundred extra screw holes and relaid the Ipe with exact gaps, the right number of fasteners and all-new 316 stainless steel screws, then deep-sanded every board and applied hardwood oil. Lower main deck: washed with cleaner and brightener, fully sanded to remove the old coating, fixed the raised board and oiled. Upper main deck: fully sanded and prepped, railing posts reinforced with structural screws, then oiled.',
+    'Spa deck: we carefully removed all the Ipe boards and rebuilt the frame from pressure-treated lumber — stronger than the old one, built to code, with joist tape on top and tied to the concrete patio — and repaired the fascia. We filled more than a hundred extra screw holes and relaid the Ipe with exact gaps, the right number of fasteners and all-new 316 stainless steel screws, then deep-sanded every board and applied one coat of hardwood oil. Lower main deck: washed with cleaner and brightener, fully sanded to remove the old coating, fixed the raised board and applied one coat of oil. Upper main deck: fully sanded and prepped, railing posts reinforced with structural screws, then one coat of oil.',
   todo: [],
   googleReview: true,
   coverId: '01',

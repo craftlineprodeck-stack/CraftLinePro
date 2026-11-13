@@ -13,12 +13,12 @@ export const project: Project = {
   completed: '2026-09',
   areaSqFt: 1100,
   days: 5,
-  finish: { type: 'penetrating hardwood oil', color: 'Natural', brand: 'DeckWise' },
+  finish: { kind: 'oil', type: 'penetrating hardwood oil', color: 'Natural', brand: 'DeckWise' },
   summary: 'Every screw re-fastened, stair frame repaired and railing posts reinforced, then the Ipe sanded and oiled.',
   before:
     'A 20-year-old Ipe deck. Screws throughout were loose or broken and the boards squeaked underfoot. The frame under the steps down to the lower level had weakened, the railing posts were loose, and the boards were faded and gray.',
   whatWeDid:
-    'Day one went to repairs: we re-fastened every screw on the deck, repaired the stair frame and reinforced the railing posts with structural screws. The next two days were prep — pressure washing and full sanding of the boards and railings. Then we applied the hardwood oil.',
+    'Day one went to repairs: we re-fastened every screw on the deck, repaired the stair frame and reinforced the railing posts with structural screws. The next two days were prep — pressure washing and full sanding of the boards and railings. Then we applied one coat of hardwood oil.',
   todo: [],
   googleReview: true,
   coverId: '01',

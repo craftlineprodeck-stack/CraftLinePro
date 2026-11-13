@@ -13,7 +13,7 @@ export const project: Project = {
   completed: '2026-09',
   areaSqFt: 550,
   days: 3,
-  finish: { type: 'semi-transparent stain', color: 'Cordovan Brown', brand: 'Behr Premium' },
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Cordovan Brown' },
   summary: 'Squeaky, faded Redwood deck re-fastened, deep-sanded and finished in two coats of semi-transparent stain.',
   before:
     'The finish on the deck and railings was faded and dirty. Boards squeaked badly, screw heads stuck up, and a few boards were loose where old screws had broken.',

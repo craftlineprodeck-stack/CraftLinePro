@@ -7,6 +7,7 @@ import { pages } from '@/data/pages';
 import { projects } from '@/data/projects';
 import { reviews } from '@/data/reviews';
 import { services } from '@/data/services';
+import { FINISH_COATS } from '@/data/types';
 import type { City, CitySlug, Finish, Material, PageKey, Project, ProjectCity, Region, Review, Service, ServiceSlug, SitePage } from '@/data/types';
 
 export function getServices(): Service[] {
@@ -75,6 +76,11 @@ export function getMaterialName(material: Material): string {
 // "semi-transparent stain — Red Garrison"
 export function formatFinish(finish: Finish): string {
   return finish.color ? `${finish.type} — ${finish.color}` : finish.type;
+}
+
+export function finishCoats(finish: Finish): string {
+  const n = FINISH_COATS[finish.kind];
+  return `${n} ${n === 1 ? 'coat' : 'coats'}`;
 }
 
 // "2026-09" -> "September 2026"

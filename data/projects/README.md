@@ -7,7 +7,7 @@ One project = one file in this folder (`<slug>.ts`) exporting a `Project` (see `
 3. Create `data/projects/<slug>.ts`; `projectPhotos(slug, caption, [[role, shows], ...])` lists the photos in manifest order (photo 1 = `-01.webp`).
 4. Import it in `index.ts` and add it to the `projects` list (order = order on `/projects`).
 5. `city` is a city slug, or `elk-grove` / `west-sacramento` (gallery only, no city page). `services`: first = main service.
-6. Case format: city · material · area (sq ft) · days · before / what we did; `finish` = type + color, brand only in `finish.brand`.
+6. Case format: city · material · area (sq ft) · days · before / what we did. `finish`: `kind: 'stain'` (type + color, no brand, 2 coats) or `kind: 'oil'` (1 coat; `brand` only for hardwood oils).
 7. Before/after pairs: both shots from the same spot and angle — otherwise keep them in the gallery.
 8. No client names in the repo — only `googleReview: true/false`. Missing facts go to `todo` (shown on the draft page).
 9. `ready: true` only after the owner approves the text — then the page is indexed and goes into the sitemap.

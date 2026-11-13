@@ -13,8 +13,7 @@ export const project: Project = {
   completed: '2025-12',
   areaSqFt: 400,
   days: 3,
-  // Owner's color name contains a banned word; shown without it.
-  finish: { type: 'semi-transparent stain', color: 'natural tone', brand: 'Behr Premium' },
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'cedar natural tone' },
   summary: 'Deck machine-sanded, railings and stairs hand-sanded, knot holes repaired, two coats of stain.',
   before: 'A Redwood deck with a gray, weathered surface, along with its railings and staircase, all overdue for restoration.',
   whatWeDid:

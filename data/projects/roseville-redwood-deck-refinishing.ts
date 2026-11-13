@@ -13,7 +13,7 @@ export const project: Project = {
   completed: '2026-08',
   areaSqFt: 480,
   days: 2,
-  finish: { type: 'semi-transparent stain', color: 'Redwood', brand: 'Behr Premium' },
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Redwood' },
   summary: 'Faded Redwood deck re-fastened, fully sanded and finished in two coats of stain in two days.',
   before: 'Old, faded Redwood with loose screws.',
   whatWeDid: 'We fully sanded the deck, tightened every screw and applied two coats of new stain.',

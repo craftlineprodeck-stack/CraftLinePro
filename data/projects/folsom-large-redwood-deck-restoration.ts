@@ -14,11 +14,12 @@ export const project: Project = {
   areaSqFt: 500,
   areaApprox: true,
   days: 3,
-  finish: { type: 'semi-transparent stain', color: 'Red Garrison', brand: 'Woodluxe' },
-  summary: 'A large Redwood deck with railings and stairs, unstained for three years, restored in semi-transparent stain.',
+  finish: { kind: 'stain', type: 'semi-transparent stain', color: 'Red Garrison' },
+  summary: 'A large Redwood deck with railings and stairs, unstained for three years, fully sanded, re-screwed and finished in two coats of semi-transparent stain.',
   before: "A large Redwood deck with railings and stairs that hadn't been stained in three years.",
-  whatWeDid: 'We restored the deck, railings and stairs and finished them in semi-transparent stain, Red Garrison.',
-  todo: ['Prep steps (wash / sanding), any repairs, and number of stain coats.'],
+  whatWeDid:
+    'We fully sanded the deck, railings and stairs and re-drove every screw. Then we applied two coats of water-based semi-transparent stain in Red Garrison.',
+  todo: [],
   googleReview: true,
   coverId: '01',
   photos: projectPhotos(slug, CAPTION, [

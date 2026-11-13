@@ -4,7 +4,7 @@
 // - next/font imported only in theme/fonts.ts
 // - `tel:` links only in components/PhoneLink.tsx
 // - no e-mail addresses anywhere in code (the owner's address is form-only)
-// - no banned words (licensing claims, wood species we don't use, old company names)
+// - no banned words (licensing claims, wood species we don't use, old company names, stain brands)
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -67,7 +67,7 @@ const rules = [
     dirs: allCodeDirs,
     // assembled from parts so this file does not trip its own rule if scanned
     re: new RegExp(
-      ['licen' + 's(?:ed|e)\\b', 'CSLB', 'ced' + 'ar', 'Carmi' + 'chael', 'CraftLine Deck & Fen' + 'ce', 'CraftLine Construc' + 'tion'].join('|'),
+      ['licen' + 's(?:ed|e)\\b', 'CSLB', 'ced' + 'ar(?! natural tone)', 'Carmi' + 'chael', 'CraftLine Deck & Fen' + 'ce', 'CraftLine Construc' + 'tion', 'Wood' + 'luxe', 'Be' + 'hr\\b'].join('|'),
       'gi',
     ),
   },

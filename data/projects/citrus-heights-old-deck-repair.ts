@@ -13,8 +13,7 @@ export const project: Project = {
   completed: '2025-07',
   areaSqFt: 640,
   days: 4,
-  // Owner's color name contains a banned word; shown as type only.
-  finish: { type: 'solid stain', brand: 'Behr Premium' },
+  finish: { kind: 'stain', type: 'solid stain', color: 'cedar natural tone' },
   summary: 'About 40% of the boards and the fascia replaced, benches repaired, and the deck sanded and stained.',
   before: 'An old Redwood deck: about 40% of the boards had rotted and needed replacing, along with the fascia, and two benches needed repair.',
   whatWeDid:

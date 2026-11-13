@@ -14,12 +14,12 @@ export const project: Project = {
   completed: '2026-04',
   areaSqFt: 560,
   days: 4,
-  finish: { type: 'penetrating oil', color: 'Natural', brand: 'Cabot Australian Timber Oil' },
+  finish: { kind: 'oil', type: 'penetrating oil', color: 'Natural' },
   summary: 'Poolside Redwood deck sanded, spot-repaired and oiled, plus a new fence section and two gates.',
   before:
     'The job covered an old fence with a gate, a separate wooden gate leading to the deck, and the Redwood deck itself, which needed restoration, a couple of boards replaced and an oil finish.',
   whatWeDid:
-    'We built about 20 ft of new fence with a built-in gate, plus a separate new Redwood gate and post. On the deck we did a full sanding, spot board repairs, and finished it with oil.',
+    'We built about 20 ft of new fence with a built-in gate, plus a separate new Redwood gate and post. On the deck we did a full sanding, spot board repairs, and finished it with one coat of oil.',
   todo: [],
   googleReview: true,
   coverId: '01',
