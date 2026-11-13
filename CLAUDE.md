@@ -35,6 +35,8 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - General city: **Sacramento**.
 - Primary: **Fair Oaks, Folsom**. Then **Orangevale, Granite Bay** (premium), **Citrus Heights** (secondary).
 - Expansion: Roseville, Rocklin, El Dorado Hills, Auburn.
+- Other focus cities (pages, lower priority): Rancho Cordova, Gold River, Loomis, Sacramento (Land Park, Arden Park, Sierra Oaks as sections), East Sacramento.
+- All 14 focus cities have pages, grouped into 4 regions (see Service areas). Priority decides order in lists, schema, homepage mentions, service × city pages and ad budget — not whether a city gets a page.
 - A city page needs content unique to that city (own projects/reviews, or local permits, typical decks and lots, HOAs, nearest projects, local FAQ). Service × city pages come after launch where a city has 2+ projects of that service.
 
 ## Stack
