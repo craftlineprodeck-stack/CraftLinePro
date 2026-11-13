@@ -86,3 +86,4 @@ export interface SiteConfig { name: string; legalName: string; url: string; phon
 - Тестового фреймворка нет и он не нужен на этом этапе; проверка поведения — сборка + запуск `npm run start`/`dev` и запросы curl.
 - Не трогать: `public/`, `CLAUDE.md`, `.autopilot/`, `netlify.toml`, `scripts/optimize-images.js`, `scripts/optimize-new-images.js`, `README.md`, `PERFORMANCE.md`, `.claude/`.
 - Коммиты: только оркестратор. Исполнитель не коммитит и не пушит.
+- Таск 01: всё по границам выше; плюс `components/layout/NavDropdown.tsx` → `NavDropdown({ item: NavItem })`; скрипты `npm run check:tokens`, `npm run check`; `lint` = `eslint --ignore-pattern 'scripts/optimize-*.js'` (старые скрипты картинок на require()). Десктоп-меню с lg (1024px), мобильная кнопка ниже; липкая кнопка звонка скрыта с md (768px).
