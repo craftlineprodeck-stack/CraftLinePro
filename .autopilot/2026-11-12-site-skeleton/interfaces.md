@@ -87,3 +87,11 @@ export interface SiteConfig { name: string; legalName: string; url: string; phon
 - Не трогать: `public/`, `CLAUDE.md`, `.autopilot/`, `netlify.toml`, `scripts/optimize-images.js`, `scripts/optimize-new-images.js`, `README.md`, `PERFORMANCE.md`, `.claude/`.
 - Коммиты: только оркестратор. Исполнитель не коммитит и не пушит.
 - Таск 01: всё по границам выше; плюс `components/layout/NavDropdown.tsx` → `NavDropdown({ item: NavItem })`; скрипты `npm run check:tokens`, `npm run check`; `lint` = `eslint --ignore-pattern 'scripts/optimize-*.js'` (старые скрипты картинок на require()). Десктоп-меню с lg (1024px), мобильная кнопка ниже; липкая кнопка звонка скрыта с md (768px).
+
+## Дополнение 2 — границы
+- `CitySlug` = 'fair-oaks' | 'orangevale' | 'citrus-heights' | 'rancho-cordova' | 'gold-river' | 'folsom' | 'el-dorado-hills' | 'granite-bay' | 'roseville' | 'rocklin' | 'loomis' | 'auburn' | 'sacramento' | 'east-sacramento'. `cities` в `data/cities/index.ts` — в этом порядке (порядок внутри региона = порядок массива).
+- `NavEntry` получает вариант `{ label: string; children: 'areas' }`; в `site.nav` пункт Service Areas = `{ label: 'Service Areas', children: 'areas' }`.
+- `NavItem` получает `groups?: NavGroup[]`, где `export interface NavGroup { label: string; items: NavItem[] }`. Пункт Service Areas: `{ label: 'Service Areas', href: '/areas', groups: [4 региона], children: [{ label: 'All Service Areas', href: '/areas' }] }` — `children` у него = хвостовые ссылки после групп.
+- `lib/content.ts`: новая `getRegionsWithCities(): { region: Region; cities: City[] }[]` — все города, регионы по order, пустые регионы отброшены. `getReadyCities` и `getRegionsWithReadyCities` не меняются (подвал, /areas, sitemap).
+- `app/areas/[city]/page.tsx`: `generateStaticParams` из `getCities()` (все), `dynamicParams = false`, метаданные через `pageMetadata({ ready: city.ready })`.
+- Таск 02: как в «Дополнение 2». Панель Service Areas — `absolute inset-x-0` от шапки, внутри Container + grid-cols-4; десктоп-навигация шапки растянута по высоте (self-stretch), чтобы мышь доходила до панели.

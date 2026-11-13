@@ -23,7 +23,7 @@
 | R17 | «Do not write page copy yet» / «без текстов и выдуманных фактов» | done | — | spec §Решение → T01 → a8d98d8 |
 | R18 | «empty page routes from the site structure table» / «Все страницы из таблицы — заглушки: только заголовок-метка «страница в работе»» | done | — | spec §Решение → T01 → a8d98d8 |
 | R19 | «Заглушки закрыты от индексации, пока на них нет текста» | done | — | spec §Решение → T01 → a8d98d8 |
-| R20 | «/areas/[city] generates only cities whose page flag is on» | done | — | spec §Решение → T01 → a8d98d8 |
+| R20 | «/areas/[city] generates only cities whose page flag is on» | dropped | пользователь: «Add all 14 focus cities as placeholder pages (noindex, out of sitemap until ready)» — страница есть у каждого города, `ready` теперь решает только noindex/sitemap/подвал/карточки | spec §Решение → T01 → a8d98d8 |
 | R21 | «/areas cards use it» (флаг ready) | done | — | spec §Решение → T01 → a8d98d8 |
 | R22 | «Sitemap lists only pages that are ready (not the noindex placeholders)» | done | — | spec §Решение → T01 → a8d98d8 |
 | R23 | «`robots.ts` не блокирует `/_next/`» | done | — | spec §Решение → T01 → a8d98d8 |
@@ -37,3 +37,11 @@
 | R31 | «→ PR + ссылка на превью Netlify» | done | — | spec §Решение → T01 → a8d98d8 |
 | R32 | «CLAUDE.md не трогаю» | done | — | spec §Решение → T01 → a8d98d8 |
 | R33i | *(подразумевается)* правила CLAUDE.md соблюдены в коде каркаса: нет запрещённых слов, почта не выводится, нет хардкода цветов | done | — | spec §Решение → T01 → a8d98d8 |
+| G01 | «Add all 14 focus cities as placeholder pages (noindex, out of sitemap until ready)» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G02 | «grouped by region: East Sacramento County: Fair Oaks, Orangevale, Citrus Heights, Rancho Cordova, Gold River · Folsom & El Dorado Hills: Folsom, El Dorado Hills · Placer County: Granite Bay, Roseville, Rocklin, Loomis, Auburn · Sacramento: Sacramento (sections later: Land Park, Arden Park, Sierra Oaks), East Sacramento» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G03 | «Service Areas becomes a dropdown grouped by these 4 regions» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G04 | «desktop: 4 columns» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G05 | «mobile: region accordion» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G06 | «+ last item "All Service Areas" (/areas)» | done | — | spec §Дополнение 2 → T02 → b2287bb |
+| G07 | «Update the menu and service-areas lines in CLAUDE.md accordingly» | done | оркестратор правит CLAUDE.md сам (файл памяти) | spec §Дополнение 2 → T03 → 8f568e6 |
+| G08 | «Then build, lint, commit. Don't push» | done | — | spec §Дополнение 2 → T02 → b2287bb |

@@ -13,8 +13,8 @@ window.STATE =
   "skillDir": "/Users/aleksejsmirnov/.claude/skills/autopilot",
   "baseCommit": "48778b7",
   "startedAt": "2026-11-12T18:17:21-08:00",
-  "updatedAt": "2026-11-12T18:36:20-08:00",
-  "finishedAt": "2026-11-12T18:36:20-08:00",
+  "updatedAt": "2026-11-12T19:32:48-08:00",
+  "finishedAt": "2026-11-12T19:32:48-08:00",
   "stages": [
     {
       "id": "preflight",
@@ -25,55 +25,55 @@ window.STATE =
     {
       "id": "manifest",
       "status": "done",
-      "startedAt": "2026-11-12T18:17:29-08:00",
-      "finishedAt": "2026-11-12T18:18:02-08:00"
+      "startedAt": "2026-11-12T19:22:45-08:00",
+      "finishedAt": "2026-11-12T19:23:34-08:00"
     },
     {
       "id": "briefing",
       "status": "skipped",
-      "startedAt": "2026-11-12T18:18:02-08:00",
-      "finishedAt": "2026-11-12T18:18:10-08:00",
-      "note": "вопросов не потребовалось — план утверждён пользователем"
+      "startedAt": "2026-11-12T19:23:49-08:00",
+      "finishedAt": "2026-11-12T19:23:49-08:00",
+      "note": "дополнение однозначно"
     },
     {
       "id": "spec",
       "status": "done",
-      "startedAt": "2026-11-12T18:18:10-08:00",
-      "finishedAt": "2026-11-12T18:20:59-08:00"
+      "startedAt": "2026-11-12T19:23:34-08:00",
+      "finishedAt": "2026-11-12T19:23:34-08:00"
     },
     {
       "id": "plan",
       "status": "done",
-      "startedAt": "2026-11-12T18:20:59-08:00",
-      "finishedAt": "2026-11-12T18:21:36-08:00"
+      "startedAt": "2026-11-12T19:23:34-08:00",
+      "finishedAt": "2026-11-12T19:23:34-08:00"
     },
     {
       "id": "build",
       "status": "done",
-      "startedAt": "2026-11-12T18:21:36-08:00",
-      "finishedAt": "2026-11-12T18:29:16-08:00"
+      "startedAt": "2026-11-12T19:23:34-08:00",
+      "finishedAt": "2026-11-12T19:28:44-08:00"
     },
     {
       "id": "review",
       "status": "done",
-      "startedAt": "2026-11-12T18:29:16-08:00",
-      "finishedAt": "2026-11-12T18:33:28-08:00"
+      "startedAt": "2026-11-12T19:28:44-08:00",
+      "finishedAt": "2026-11-12T19:30:49-08:00"
     },
     {
       "id": "final",
       "status": "done",
-      "startedAt": "2026-11-12T18:33:28-08:00",
-      "finishedAt": "2026-11-12T18:36:20-08:00"
+      "startedAt": "2026-11-12T19:30:49-08:00",
+      "finishedAt": "2026-11-12T19:32:48-08:00"
     }
   ],
   "requirements": {
-    "total": 33,
-    "done": 33,
+    "total": 41,
+    "done": 40,
     "inTicket": 0,
     "inSpec": 0,
     "placeholder": 0,
     "deferred": 0,
-    "dropped": 0
+    "dropped": 1
   },
   "tickets": [
     {
@@ -142,6 +142,65 @@ window.STATE =
       "commit": "a8d98d8"
     },
     {
+      "id": "02",
+      "title": "14 городов и выпадающее меню Service Areas",
+      "requirements": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G08"
+      ],
+      "blockedBy": [
+        "01"
+      ],
+      "wave": 3,
+      "zone": [
+        "data/",
+        "lib/",
+        "app/areas/",
+        "components/layout/"
+      ],
+      "review": "нет",
+      "model": "сильная",
+      "status": "done",
+      "startedAt": "2026-11-12T19:23:34-08:00",
+      "finishedAt": "2026-11-12T19:26:43-08:00",
+      "retries": 0,
+      "repairs": 0,
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      },
+      "commit": "b2287bb"
+    },
+    {
+      "id": "03",
+      "title": "Строки меню и Service Areas в CLAUDE.md",
+      "requirements": [
+        "G07"
+      ],
+      "blockedBy": [],
+      "wave": 3,
+      "zone": [
+        "CLAUDE.md"
+      ],
+      "review": "нет",
+      "model": "обычная",
+      "status": "done",
+      "startedAt": "2026-11-12T19:26:43-08:00",
+      "finishedAt": "2026-11-12T19:26:43-08:00",
+      "retries": 0,
+      "repairs": 0,
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      },
+      "commit": "8f568e6"
+    },
+    {
       "id": "F1",
       "title": "Ремонт ветки: выпадающее меню и мобильная панель",
       "requirements": [
@@ -157,15 +216,40 @@ window.STATE =
       "review": "да — ремонт ветки",
       "model": "сильная",
       "status": "done",
-      "retries": 0,
-      "repairs": 0,
       "startedAt": "2026-11-12T18:31:47-08:00",
       "finishedAt": "2026-11-12T18:34:22-08:00",
+      "retries": 0,
+      "repairs": 0,
       "tests": {
         "passed": 3,
         "failed": 0
       },
       "commit": "700a619"
+    },
+    {
+      "id": "F2",
+      "title": "Ремонт: панель Service Areas не закрывается по пути мыши",
+      "requirements": [
+        "G03",
+        "G04"
+      ],
+      "blockedBy": [],
+      "wave": 4,
+      "zone": [
+        "components/layout/"
+      ],
+      "review": "да — ремонт ветки",
+      "model": "сильная",
+      "status": "done",
+      "retries": 0,
+      "repairs": 0,
+      "startedAt": "2026-11-12T19:28:44-08:00",
+      "finishedAt": "2026-11-12T19:30:49-08:00",
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      },
+      "commit": "b0a54e5"
     }
   ],
   "tests": {
@@ -185,8 +269,8 @@ window.STATE =
     "check:tokens ловит почту и запрещённые слова — ради R33i"
   ],
   "coverage": {
-    "found": 4,
-    "fixed": 4,
+    "found": 5,
+    "fixed": 5,
     "deferred": 0,
     "items": []
   },
@@ -195,8 +279,8 @@ window.STATE =
     "мобильная ширина 375px проверена по классам, не в браузере"
   ],
   "blind": {
-    "checked": 33,
-    "matched": 33,
+    "checked": 8,
+    "matched": 8,
     "mismatches": []
   },
   "beats": [
@@ -217,9 +301,20 @@ window.STATE =
     "2026-11-12T18:34:23-08:00",
     "2026-11-12T18:35:28-08:00",
     "2026-11-12T18:35:46-08:00",
-    "2026-11-12T18:36:20-08:00"
+    "2026-11-12T18:36:20-08:00",
+    "2026-11-12T19:22:45-08:00",
+    "2026-11-12T19:23:34-08:00",
+    "2026-11-12T19:23:49-08:00",
+    "2026-11-12T19:23:50-08:00",
+    "2026-11-12T19:26:43-08:00",
+    "2026-11-12T19:28:44-08:00",
+    "2026-11-12T19:29:49-08:00",
+    "2026-11-12T19:29:50-08:00",
+    "2026-11-12T19:30:49-08:00",
+    "2026-11-12T19:31:25-08:00",
+    "2026-11-12T19:32:48-08:00"
   ],
-  "rev": 32,
+  "rev": 56,
   "waiting": null,
   "waits": [],
   "log": [
@@ -438,6 +533,193 @@ window.STATE =
       "k": "finish",
       "result": "Каркас сайта v2: бренд в theme/, данные с флагами ready, все маршруты-заглушки с noindex, шапка, меню, подвал, PhoneLink",
       "problems": 0
+    },
+    {
+      "t": "2026-11-12T19:22:45-08:00",
+      "k": "reopen"
+    },
+    {
+      "t": "2026-11-12T19:23:34-08:00",
+      "k": "tickets",
+      "n": 3
+    },
+    {
+      "t": "2026-11-12T19:23:34-08:00",
+      "k": "gate",
+      "g": "G3",
+      "ok": false,
+      "problems": 1
+    },
+    {
+      "t": "2026-11-12T19:23:34-08:00",
+      "k": "stage",
+      "id": "build",
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:23:34-08:00",
+      "k": "ticket",
+      "ids": [
+        "02"
+      ],
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:23:49-08:00",
+      "k": "stage",
+      "id": "briefing",
+      "act": "skip",
+      "note": "дополнение однозначно"
+    },
+    {
+      "t": "2026-11-12T19:23:49-08:00",
+      "k": "tickets",
+      "n": 4
+    },
+    {
+      "t": "2026-11-12T19:23:50-08:00",
+      "k": "gate",
+      "g": "G3",
+      "ok": true,
+      "problems": 0
+    },
+    {
+      "t": "2026-11-12T19:26:43-08:00",
+      "k": "ticket",
+      "ids": [
+        "02"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-12T19:26:43-08:00",
+      "k": "ticket",
+      "ids": [
+        "03"
+      ],
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:26:43-08:00",
+      "k": "ticket",
+      "ids": [
+        "03"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-12T19:28:44-08:00",
+      "k": "stage",
+      "id": "review",
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:28:44-08:00",
+      "k": "tickets",
+      "n": 5
+    },
+    {
+      "t": "2026-11-12T19:28:44-08:00",
+      "k": "add",
+      "key": "report",
+      "n": 4
+    },
+    {
+      "t": "2026-11-12T19:28:44-08:00",
+      "k": "ticket",
+      "ids": [
+        "F2"
+      ],
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:29:49-08:00",
+      "k": "ticket",
+      "ids": [
+        "F2"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-12T19:29:50-08:00",
+      "k": "ticket",
+      "ids": [
+        "F2"
+      ],
+      "act": "review"
+    },
+    {
+      "t": "2026-11-12T19:30:49-08:00",
+      "k": "ticket",
+      "ids": [
+        "F2"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 3,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-12T19:30:49-08:00",
+      "k": "add",
+      "key": "report",
+      "n": 2
+    },
+    {
+      "t": "2026-11-12T19:30:49-08:00",
+      "k": "stage",
+      "id": "final",
+      "act": "start"
+    },
+    {
+      "t": "2026-11-12T19:31:25-08:00",
+      "k": "gate",
+      "g": "G2",
+      "ok": true,
+      "found": 5,
+      "fixed": 5,
+      "deferred": 0
+    },
+    {
+      "t": "2026-11-12T19:32:48-08:00",
+      "k": "gate",
+      "g": "G4",
+      "ok": true,
+      "checked": 8,
+      "matched": 8
+    },
+    {
+      "t": "2026-11-12T19:32:48-08:00",
+      "k": "tests",
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "t": "2026-11-12T19:32:48-08:00",
+      "k": "gate",
+      "g": "G1",
+      "ok": true,
+      "open": 0,
+      "total": 41
+    },
+    {
+      "t": "2026-11-12T19:32:48-08:00",
+      "k": "finish",
+      "result": "Каркас v2 + 14 городов-заглушек и меню Service Areas по регионам",
+      "problems": 0
     }
   ],
   "reqList": [
@@ -539,7 +821,8 @@ window.STATE =
     {
       "id": "R20",
       "text": "«/areas/[city] generates only cities whose page flag is on»",
-      "status": "done"
+      "status": "dropped",
+      "why": "пользователь: «Add all 14 focus cities as placeholder pages (noindex, out of sitemap until ready)» — страница есть у каждого города, ready теперь решает только noindex/sitemap/подвал/карточки"
     },
     {
       "id": "R21",
@@ -605,35 +888,75 @@ window.STATE =
       "id": "R33i",
       "text": "(подразумевается) правила CLAUDE.md соблюдены в коде каркаса: нет запрещённых слов, почта не выводится, нет хардкода цветов",
       "status": "done"
+    },
+    {
+      "id": "G01",
+      "text": "«Add all 14 focus cities as placeholder pages (noindex, out of sitemap until ready)»",
+      "status": "done"
+    },
+    {
+      "id": "G02",
+      "text": "«grouped by region: East Sacramento County: Fair Oaks, Orangevale, Citrus Heights, Rancho Cordova, Gold River · Folsom & El Dorado Hills: Folsom, El Dorado Hills · Placer County: Granite Bay, Roseville, Rocklin, Loomis, Auburn · Sacramento…",
+      "status": "done"
+    },
+    {
+      "id": "G03",
+      "text": "«Service Areas becomes a dropdown grouped by these 4 regions»",
+      "status": "done"
+    },
+    {
+      "id": "G04",
+      "text": "«desktop: 4 columns»",
+      "status": "done"
+    },
+    {
+      "id": "G05",
+      "text": "«mobile: region accordion»",
+      "status": "done"
+    },
+    {
+      "id": "G06",
+      "text": "«+ last item \"All Service Areas\" (/areas)»",
+      "status": "done"
+    },
+    {
+      "id": "G07",
+      "text": "«Update the menu and service-areas lines in CLAUDE.md accordingly»",
+      "status": "done"
+    },
+    {
+      "id": "G08",
+      "text": "«Then build, lint, commit. Don't push»",
+      "status": "done"
     }
   ],
   "gates": {
-    "G1": {
+    "G3": {
       "ok": true,
-      "at": "2026-11-12T18:20:59-08:00",
-      "open": 0,
-      "total": 33
+      "at": "2026-11-12T19:23:50-08:00",
+      "problems": 0
     },
     "G2": {
       "ok": true,
-      "at": "2026-11-12T18:20:59-08:00",
-      "found": 4,
-      "fixed": 4,
+      "at": "2026-11-12T19:31:25-08:00",
+      "found": 5,
+      "fixed": 5,
       "deferred": 0
-    },
-    "G3": {
-      "ok": true,
-      "at": "2026-11-12T18:21:27-08:00",
-      "problems": 0
     },
     "G4": {
       "ok": true,
-      "at": "2026-11-12T18:35:28-08:00",
-      "checked": 33,
-      "matched": 33
+      "at": "2026-11-12T19:32:48-08:00",
+      "checked": 8,
+      "matched": 8
+    },
+    "G1": {
+      "ok": true,
+      "at": "2026-11-12T19:32:48-08:00",
+      "open": 0,
+      "total": 41
     }
   },
-  "result": "Каркас сайта v2: бренд в theme/, данные с флагами ready, все маршруты-заглушки с noindex, шапка, меню, подвал, PhoneLink",
+  "result": "Каркас v2 + 14 городов-заглушек и меню Service Areas по регионам",
   "report": [
     "Главная: заголовок вкладки пока «Home | CraftLine Decking» — решим вместе с текстом главной (запрос «deck builder Sacramento»)",
     "Мобильное меню не закрывается кнопкой «Назад» в браузере и кликом мимо — закрывают Escape и выбор пункта",
@@ -641,7 +964,13 @@ window.STATE =
     "Lint пропускает старые скрипты картинок, prebuild гоняет старый скрипт — чистка на этапе 2",
     "Ширину 375px нужно глазами проверить на превью Netlify",
     "Проверено в браузере: телефон 375px — без горизонтальной прокрутки, мобильное меню целиком видно, кнопка звонка внизу; десктоп — Services открывается кликом. Заголовок вкладки главной сейчас просто «Home»",
-    "Если мышь открыла выпадающее меню наведением, первый Enter его не закрывает — мелочь"
+    "Если мышь открыла выпадающее меню наведением, первый Enter его не закрывает — мелочь",
+    "CLAUDE.md, раздел Geography, по-прежнему называет 9 городов из 14 (нет Rancho Cordova, Gold River, Loomis, Sacramento, East Sacramento) — правил только строки меню и Service areas, как просили",
+    "Правило «уникальный контент на странице города» в CLAUDE.md стоит уточнить: относится к ready-странице, а заглушки закрыты noindex",
+    "Меню на каждой странице ссылается на 14 закрытых от поиска заглушек — так решено, просто знать",
+    "Мобильное меню помнит раскрытые регионы между открытиями; заголовки регионов в десктопной панели не связаны со списками для скринридера — мелочи",
+    "Панель Service Areas закрывается через 300 мс после ухода мыши: при очень медленном движении по диагонали всё же закроется, а при быстром переходе на Resources оба меню на миг открыты одновременно",
+    "Lint: одно предупреждение react-hooks/exhaustive-deps в выпадающем меню — проверено, безвредно"
   ],
   "blindRounds": 1
 }
