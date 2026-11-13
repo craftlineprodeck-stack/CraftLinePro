@@ -1,0 +1,35 @@
+/*
+ * CraftLine Decking — design tokens.
+ * The ONLY place where colors, font stacks, radii and the content width are defined.
+ * Swap the brand here (temporary identity: Ocean Slate + Warm Amber) — no other file holds values.
+ * Tailwind's default palette, fonts and radii are switched off with `initial`,
+ * so a color that is not a token simply has no utility class.
+ */
+@theme {
+  --color-*: initial;
+  --color-slate: #1e2b32;
+  --color-slate-700: #2c3d46;
+  --color-slate-900: #131c21;
+  --color-amber: #d49a44;
+  --color-amber-600: #b98232;
+  --color-ink: #1b2328;
+  --color-muted: #5b6870;
+  --color-surface: #f7f5f1;
+  --color-surface-alt: #ece8e1;
+  --color-border: #d9d4cb;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-*: initial;
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-display-face), sans-serif;
+
+  --radius-*: initial;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  --container-site: 72rem;
+}
