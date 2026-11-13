@@ -11,6 +11,11 @@ import { Container } from './Container';
 // out, or pressing anywhere outside closes it.
 // An item with `groups` (Service Areas) opens a full-width panel under the header with one
 // column per group and the item's `children` as trailing links, so it never runs off-screen.
+// Its hover zone is only as wide as the button, so a diagonal mouse path toward a far column
+// briefly leaves it; for that panel, mouse-leave closes after a short delay that re-entering
+// the button or the panel cancels.
+const LEAVE_DELAY_MS = 300;
+
 export function NavDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
   const openedByHover = useRef(false);
@@ -18,11 +23,22 @@ export function NavDropdown({ item }: { item: NavItem }) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuId = useId();
   const grouped = Boolean(item.groups?.length);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelLeave = () => {
+    if (leaveTimer.current !== null) {
+      clearTimeout(leaveTimer.current);
+      leaveTimer.current = null;
+    }
+  };
 
   const close = () => {
+    cancelLeave();
     openedByHover.current = false;
     setOpen(false);
   };
+
+  useEffect(() => cancelLeave, []);
 
   // Touch devices (and Safari, which does not focus buttons on click) never fire blur
   // when tapping elsewhere, so close on any press outside the dropdown.
@@ -30,8 +46,7 @@ export function NavDropdown({ item }: { item: NavItem }) {
     if (!open) return;
     const onPointerDown = (e: PointerEvent) => {
       if (rootRef.current?.contains(e.target as Node)) return;
-      openedByHover.current = false;
-      setOpen(false);
+      close();
     };
     document.addEventListener('pointerdown', onPointerDown);
     return () => document.removeEventListener('pointerdown', onPointerDown);
@@ -44,12 +59,20 @@ export function NavDropdown({ item }: { item: NavItem }) {
       // full height so the mouse can move from the button into the panel without leaving.
       className={grouped ? 'flex self-stretch items-center' : 'relative'}
       onPointerEnter={(e) => {
-        if (e.pointerType !== 'mouse' || open) return;
+        if (e.pointerType !== 'mouse') return;
+        cancelLeave();
+        if (open) return;
         openedByHover.current = true;
         setOpen(true);
       }}
       onPointerLeave={(e) => {
-        if (e.pointerType === 'mouse') close();
+        if (e.pointerType !== 'mouse') return;
+        if (!grouped) {
+          close();
+          return;
+        }
+        cancelLeave();
+        leaveTimer.current = setTimeout(close, LEAVE_DELAY_MS);
       }}
       onKeyDown={(e) => {
         if (e.key === 'Escape' && open) {
@@ -72,8 +95,8 @@ export function NavDropdown({ item }: { item: NavItem }) {
             openedByHover.current = false;
             return;
           }
-          openedByHover.current = false;
-          setOpen(!open);
+          if (open) close();
+          else setOpen(true);
         }}
         className="flex items-center gap-1 rounded-sm px-2 py-2 text-sm font-medium text-ink hover:text-amber-600 focus-visible:outline-2 focus-visible:outline-amber"
       >
