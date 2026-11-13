@@ -7,15 +7,21 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - **Owners / crew:** Alex and Viktor. Own crew, same people from estimate to final walkthrough.
 - **Phone:** (279) 237-9912 · **Email:** CraftLine.Prodeck@gmail.com (never render as plain text on the site — form only)
 - **Site:** https://craftlineprodeck.com · **Instagram:** @craftline.sacramento
-- **Positioning:** "Decks are all we do." Core volume = Redwood decks (building + restoration) and Trex composite decks — lead with these. Ipe & exotic hardwood restoration is a separate **premium line** we highlight as expertise (no local competitor covers it), not the main business.
+- **Positioning:** "Decks are all we do." Full deck contractor: building/rebuild first, then repair, then restoration. See Services for order and current emphasis.
 
-## Services
-- **Building:** Redwood decks, Trex composite decks (PVC later).
-- **Redwood restoration:** deep sanding + stain/oil, board replacement, fastener reset, frame repair and reinforcement.
-- **Ipe & hardwood restoration (premium line, smaller volume):** Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo — restoration, board replacement, oil maintenance.
-- **Related:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
-- **Materials we name:** Messmer's UV Plus, Penofin, Armstrong Clark oils; Diablo SandNET abrasives; TrexPro.
-- **Do NOT offer:** patio enclosures, porch construction, painting decks with paint.
+## Services (owner's order — use it for nav, service lists, footer)
+1. **Deck Building & Rebuild** — main focus of the company. Materials: Redwood, composite (**Trex #1, TimberTech #2**), exotic hardwood (Ipe etc.).
+2. **Deck Repair** — board replacement, framing / joist / post repair, resurfacing (new boards on an existing frame).
+3. **Restoration & Refinishing** — two separate categories:
+   - **Redwood restoration** — biggest volume.
+   - **Ipe & hardwood restoration** — premium line; pages explain why dense hardwood needs its own process (Ipe, Cumaru, Tigerwood, Garapa, Dasso bamboo; board replacement, oil maintenance).
+   - **No composite restoration** — composite is not restored; never offer it.
+4. **Add-ons:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
+- **Current emphasis (until ~Mar/Apr 2027):** homepage hero, featured projects and reviews lean on **repair and restoration** (our strongest cases). Menu order stays as above. Emphasis must be switchable in data (featured order), not by redesign — from Mar/Apr shift toward building as build cases come in.
+- Reference for structure: SIA Builds.
+- **Finishes (owner, 11.11):** hardwood (Ipe etc.) — oils: Messmer's, DeckWise, Armstrong Clark, Penofin. Redwood — mostly semi-transparent stain; solid stain on very old decks; oil when the client asks. Abrasives: Diablo SandNET. Composite: Trex, TimberTech. In project cases state finish type + color (e.g. "semi-transparent stain — Red Garrison"); name the brand for hardwood oils, keep Redwood stain brands to case details. Never claim a brand we didn't use on the project; never say Redwood is finished with hardwood oils by default.
+- Photos of the owner's partner at work are approved for the site.
+- **Do NOT offer:** patio enclosures, porch construction, painting decks with paint, composite restoration.
 
 ## Text rules (hard)
 - All site copy in **English**.
@@ -29,13 +35,13 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - General city: **Sacramento**.
 - Primary: **Fair Oaks, Folsom**. Then **Orangevale, Granite Bay** (premium), **Citrus Heights** (secondary).
 - Expansion: Roseville, Rocklin, El Dorado Hills, Auburn.
-- A city page exists only with **2+ real projects** in that city. No service × city pages for now. No neighborhood pages without real jobs.
+- A city page needs content unique to that city (own projects/reviews, or local permits, typical decks and lots, HOAs, nearest projects, local FAQ). Service × city pages come after launch where a city has 2+ projects of that service.
 
 ## Stack
 - Next.js (App Router, static generation), TypeScript, Tailwind v4.
 - **Design tokens in one file** so the brand can be swapped in ~1 hour. Temporary brand: Ocean Slate `#1E2B32`, Warm Amber `#D49A44`, logo = layered diamond + CRAFTLINE / DECKING. Final identity from the designer by Dec 15 (logo SVG) — never hardcode colors/fonts outside tokens.
 - Content lives in **data files** (services, cities, projects, reviews). New project or city = new data file, no layout changes. Projects and reviews link to cities via a `city` field.
-- Hosting: **Netlify** (deploys from `main`, preview per PR). Domain DNS at Squarespace.
+- Hosting: **Netlify** (deploys from `main`, preview per PR). Domain registered at Squarespace, **DNS managed in Netlify** — add DNS records only there.
 - Images: WebP/JPEG in repo, never HEIC. Alt text and captions as "service — material — city".
 
 ## Workflow
@@ -48,17 +54,27 @@ Instructions for Claude Code working in this repository. Read fully before any c
 | URL | Page | Main query |
 |---|---|---|
 | `/` | Home | deck builder Sacramento |
-| `/ipe-hardwood-deck-restoration` | Ipe & hardwood | Ipe deck restoration Sacramento |
-| `/redwood-deck-restoration` | Redwood restoration | deck restoration / sanding and staining |
-| `/deck-building` | Building (Redwood, Trex) | deck builder / Trex deck installation |
-| `/deck-repair` | Repair, boards, framing | deck repair |
+| `/deck-building` | 1. Building & rebuild (Redwood, Trex, TimberTech, hardwood) | deck builder / Trex deck installation |
+| `/deck-repair` | 2. Repair, boards, framing, resurfacing | deck repair |
+| `/redwood-deck-restoration` | 3a. Redwood restoration | deck restoration / sanding and staining |
+| `/ipe-hardwood-deck-restoration` | 3b. Ipe & hardwood restoration | Ipe deck restoration Sacramento |
 | `/deck-railings-stairs` | Railings & stairs | deck railing installation |
 | `/pergolas` | Pergolas | pergola builder |
 | `/areas/[city]` | City pages | deck builder + city |
 | `/projects`, `/projects/[slug]` | Projects | material + city |
+| `/deck-materials` | Materials comparison: Redwood vs Trex vs TimberTech vs Ipe & hardwood — honest pros/cons + our recommendation | redwood vs composite decking / Trex vs TimberTech |
+| `/before-and-after` | Before & After — separate page, slider pairs (caption: service — material — city) | deck restoration before and after |
 | `/reviews`, `/about`, `/contact`, `/deck-academy`, `/blog`, `/privacy` | Utility | — |
 
-Dec 1 launch minimum: home, 5 service pages, Fair Oaks, Folsom, projects, contact.
+**Main menu (like ION Builders):** About · Services ▾ (owner's order) · Resources ▾ (Materials, Blog) · Service Areas · Projects · Before & After · Contact · phone button. Keep navigation simple: Before & After is its own page, not mixed into the projects gallery. Blog item appears only once the first article exists.
+Before/after pairs are flagged inside project data (one source of photos, no duplicate files); a pair only counts if both shots are from the same spot and angle.
+**Phase 2 (after launch):** cost calculator — do not build at launch.
+
+Dec 1 launch minimum: home, 5 service pages (building, repair, Redwood restoration, Ipe & hardwood restoration, railings & stairs), materials comparison, before & after, city pages that pass the 2+ projects rule (Fair Oaks, Folsom, Granite Bay, Orangevale, Citrus Heights), projects, contact.
+
+Homepage: 8–10 blocks, no background video in hero, animation only where functional.
+
+**Service areas:** `/areas` hub (menu item, no dropdown) groups city cards into 4 regions — East Sacramento County · Folsom & El Dorado Hills · Placer County · Sacramento. A card appears only when its city page exists. Sacramento neighborhoods (Land Park, Arden Park, Sierra Oaks) are sections of the Sacramento page; East Sacramento has its own page. Each city page ends with 3–4 nearby-city links; footer has one compact line of city links. City page rule: unique local content only (own projects/reviews or real local specifics) — never a template with the city name swapped. Rollout order and data: project doc `Geo Analysis.md`.
 
 **City page template:** city-specific H1 → short form → unique intro → services for the city → permits (City of Folsom / Sacramento County for Fair Oaks & Orangevale) → projects in city → reviews from city → pricing → neighborhoods (only where we worked) → FAQ 3–5 → form → nearby cities.
 
