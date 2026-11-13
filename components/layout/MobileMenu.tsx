@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useId, useRef, useState } from 'react';
-import type { NavItem } from '@/lib/navigation';
+import type { NavGroup, NavItem } from '@/lib/navigation';
 import { PhoneLink } from '../PhoneLink';
 
 // Phone/tablet menu: toggle button with aria-expanded; the panel closes on Escape and on link click.
@@ -53,7 +53,23 @@ export function MobileMenu({ items }: { items: NavItem[] }) {
         <ul className="divide-y divide-border">
           {items.map((item) => (
             <li key={item.label} className="py-3">
-              {item.children ? (
+              {item.groups ? (
+                <>
+                  <span className="block text-xs font-semibold uppercase tracking-wider text-muted">{item.label}</span>
+                  <ul className="mt-2 space-y-1">
+                    {item.groups.map((group) => (
+                      <AccordionGroup key={group.label} group={group} onNavigate={close} />
+                    ))}
+                    {item.children?.map((child) => (
+                      <li key={child.href}>
+                        <Link href={child.href} onClick={close} className="block py-1.5 text-base font-medium text-slate">
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : item.children ? (
                 <>
                   <span className="block text-xs font-semibold uppercase tracking-wider text-muted">{item.label}</span>
                   <ul className="mt-2 space-y-1">
@@ -80,5 +96,36 @@ export function MobileMenu({ items }: { items: NavItem[] }) {
         />
       </nav>
     </div>
+  );
+}
+
+// One region of the Service Areas accordion: collapsed by default, button toggles its city list.
+function AccordionGroup({ group, onNavigate }: { group: NavGroup; onNavigate: () => void }) {
+  const [open, setOpen] = useState(false);
+  const listId = useId();
+  return (
+    <li>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={listId}
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-2 py-1.5 text-left text-base text-ink focus-visible:outline-2 focus-visible:outline-amber"
+      >
+        {group.label}
+        <svg viewBox="0 0 12 12" className={`h-3 w-3 shrink-0 ${open ? 'rotate-180' : ''}`} aria-hidden="true">
+          <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      </button>
+      <ul id={listId} hidden={!open} className="mb-2 space-y-1 border-l border-border pl-4">
+        {group.items.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} onClick={onNavigate} className="block py-1.5 text-base text-ink">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </li>
   );
 }

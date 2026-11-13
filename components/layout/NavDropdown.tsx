@@ -3,17 +3,21 @@
 import Link from 'next/link';
 import { useEffect, useId, useRef, useState } from 'react';
 import type { NavItem } from '@/lib/navigation';
+import { Container } from './Container';
 
 // Desktop dropdown: opens on mouse hover, click/tap, Enter/Space. A click right after a
 // hover-open keeps it open (the next click closes). Touch never uses hover, so a tap
 // simply toggles. Escape closes and returns focus; leaving with the mouse, moving focus
 // out, or pressing anywhere outside closes it.
+// An item with `groups` (Service Areas) opens a full-width panel under the header with one
+// column per group and the item's `children` as trailing links, so it never runs off-screen.
 export function NavDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
   const openedByHover = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuId = useId();
+  const grouped = Boolean(item.groups?.length);
 
   const close = () => {
     openedByHover.current = false;
@@ -36,7 +40,9 @@ export function NavDropdown({ item }: { item: NavItem }) {
   return (
     <div
       ref={rootRef}
-      className="relative"
+      // Grouped: not positioned, so the panel anchors to the header; stretched to the header's
+      // full height so the mouse can move from the button into the panel without leaving.
+      className={grouped ? 'flex self-stretch items-center' : 'relative'}
       onPointerEnter={(e) => {
         if (e.pointerType !== 'mouse' || open) return;
         openedByHover.current = true;
@@ -76,23 +82,69 @@ export function NavDropdown({ item }: { item: NavItem }) {
           <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" />
         </svg>
       </button>
-      <ul
-        id={menuId}
-        hidden={!open}
-        className="absolute left-0 top-full z-50 min-w-60 rounded-md border border-border bg-white py-2 shadow-lg"
-      >
-        {item.children?.map((child) => (
-          <li key={child.href}>
-            <Link
-              href={child.href}
-              onClick={close}
-              className="block px-4 py-2 text-sm text-ink hover:bg-surface-alt focus-visible:bg-surface-alt focus-visible:outline-none"
-            >
-              {child.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {grouped ? (
+        <div
+          id={menuId}
+          hidden={!open}
+          className="absolute inset-x-0 top-full z-50 border-y border-border bg-white shadow-lg"
+        >
+          <Container className="py-6">
+            <div className="grid grid-cols-4 gap-6">
+              {item.groups?.map((group) => (
+                <div key={group.label}>
+                  <p className="px-2 text-xs font-semibold uppercase tracking-wider text-muted">{group.label}</p>
+                  <ul className="mt-2">
+                    {group.items.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          onClick={close}
+                          className="block rounded-sm px-2 py-1.5 text-sm text-ink hover:bg-surface-alt focus-visible:bg-surface-alt focus-visible:outline-none"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            {item.children?.length ? (
+              <ul className="mt-4 border-t border-border pt-4">
+                {item.children.map((child) => (
+                  <li key={child.href}>
+                    <Link
+                      href={child.href}
+                      onClick={close}
+                      className="inline-block rounded-sm px-2 py-1.5 text-sm font-semibold text-slate hover:text-amber-600 focus-visible:outline-2 focus-visible:outline-amber"
+                    >
+                      {child.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </Container>
+        </div>
+      ) : (
+        <ul
+          id={menuId}
+          hidden={!open}
+          className="absolute left-0 top-full z-50 min-w-60 rounded-md border border-border bg-white py-2 shadow-lg"
+        >
+          {item.children?.map((child) => (
+            <li key={child.href}>
+              <Link
+                href={child.href}
+                onClick={close}
+                className="block px-4 py-2 text-sm text-ink hover:bg-surface-alt focus-visible:bg-surface-alt focus-visible:outline-none"
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

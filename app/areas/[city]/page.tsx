@@ -1,24 +1,25 @@
 import { notFound } from 'next/navigation';
 import { PagePlaceholder } from '@/components/PagePlaceholder';
-import { getCity, getReadyCities } from '@/lib/content';
+import { getCities, getCity } from '@/lib/content';
 import { pageMetadata } from '@/lib/metadata';
 
 type Props = { params: Promise<{ city: string }> };
 
 export const dynamicParams = false;
 
+// Every city has a page; it stays noindex and out of the sitemap until `ready`.
 export function generateStaticParams() {
-  return getReadyCities().map((c) => ({ city: c.slug }));
+  return getCities().map((c) => ({ city: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const city = getCity((await params).city);
-  if (!city?.ready) return {};
+  if (!city) return {};
   return pageMetadata({ path: `/areas/${city.slug}`, title: city.name, ready: city.ready });
 }
 
 export default async function Page({ params }: Props) {
   const city = getCity((await params).city);
-  if (!city?.ready) notFound();
+  if (!city) notFound();
   return <PagePlaceholder title={city.name} />;
 }

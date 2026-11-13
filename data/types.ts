@@ -11,7 +11,21 @@ export interface Service { slug: ServiceSlug; name: string; navLabel: string; or
 export type RegionId = 'east-sacramento-county' | 'folsom-el-dorado-hills' | 'placer-county' | 'sacramento';
 export interface Region { id: RegionId; name: string; order: number; }
 
-export type CitySlug = 'fair-oaks' | 'folsom' | 'granite-bay' | 'orangevale' | 'citrus-heights';
+export type CitySlug =
+  | 'fair-oaks'
+  | 'orangevale'
+  | 'citrus-heights'
+  | 'rancho-cordova'
+  | 'gold-river'
+  | 'folsom'
+  | 'el-dorado-hills'
+  | 'granite-bay'
+  | 'roseville'
+  | 'rocklin'
+  | 'loomis'
+  | 'auburn'
+  | 'sacramento'
+  | 'east-sacramento';
 export interface City { slug: CitySlug; name: string; region: RegionId; ready: boolean; nearby: CitySlug[]; }
 
 export type Material = 'redwood' | 'trex' | 'timbertech' | 'ipe' | 'cumaru' | 'tigerwood' | 'garapa' | 'dasso-bamboo' | 'aluminum';
@@ -43,6 +57,7 @@ export interface SitePage { key: PageKey; path: string; title: string; ready: bo
 export type NavEntry =
   | { label: string; href: string } // plain link
   | { label: string; children: 'services' } // dropdown from services
+  | { label: string; children: 'areas' } // dropdown of cities grouped by region
   | { label: string; children: PageKey[] }; // dropdown from pages (shown only if page ready, except deck-materials which is always listed)
 
 export interface SiteConfig {

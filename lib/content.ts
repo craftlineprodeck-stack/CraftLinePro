@@ -29,12 +29,21 @@ export function getCity(slug: string): City | undefined {
   return cities.find((c) => c.slug === slug);
 }
 
-export function getRegionsWithReadyCities(): { region: Region; cities: City[] }[] {
-  const ready = getReadyCities();
+function groupByRegion(list: City[]): { region: Region; cities: City[] }[] {
   return [...regions]
     .sort((a, b) => a.order - b.order)
-    .map((region) => ({ region, cities: ready.filter((c) => c.region === region.id) }))
+    .map((region) => ({ region, cities: list.filter((c) => c.region === region.id) }))
     .filter((group) => group.cities.length > 0);
+}
+
+// Footer, /areas cards and sitemap: ready cities only.
+export function getRegionsWithReadyCities(): { region: Region; cities: City[] }[] {
+  return groupByRegion(getReadyCities());
+}
+
+// Service Areas menu: every city, ready or not (placeholder pages are noindex).
+export function getRegionsWithCities(): { region: Region; cities: City[] }[] {
+  return groupByRegion(cities);
 }
 
 export function getReadyProjects(): Project[] {

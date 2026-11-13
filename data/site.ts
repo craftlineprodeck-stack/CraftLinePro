@@ -11,7 +11,7 @@ export const site: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Services', children: 'services' },
     { label: 'Resources', children: ['deck-materials', 'blog'] },
-    { label: 'Service Areas', href: '/areas' },
+    { label: 'Service Areas', children: 'areas' },
     { label: 'Projects', href: '/projects' },
     { label: 'Before & After', href: '/before-and-after' },
     { label: 'Contact', href: '/contact' },

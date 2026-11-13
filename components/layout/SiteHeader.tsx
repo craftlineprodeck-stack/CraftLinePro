@@ -14,9 +14,9 @@ export function SiteHeader() {
         <Link href="/" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-amber">
           <Logo />
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-1 self-stretch lg:flex">
           {items.map((item) =>
-            item.children ? (
+            item.children || item.groups ? (
               <NavDropdown key={item.label} item={item} />
             ) : (
               <Link
