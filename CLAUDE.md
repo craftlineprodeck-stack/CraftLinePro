@@ -29,6 +29,8 @@ Instructions for Claude Code working in this repository. Read fully before any c
 - **Never mention cedar** (not used in region) or **Carmichael**.
 - No keyword stuffing, no invented awards/stats, no "hundreds of satisfied customers", no fake reviews. Only verifiable numbers, identical everywhere.
 - No "near me / best / top rated / cost" stuffing in headings.
+- **"Built to code"** is allowed in case texts (owner confirmed 12.11: we always build to code). Permit and licensing claims stay banned until the owner confirms.
+- Wood is always finished with **stain** (type varies) — never write "paint"/"painted" about our work (e.g. "benches finished in a contrasting stain color", "skirting stained to match the house").
 - Don't claim insurance, permits handled, warranty terms, response-time promises, pricing or "N projects per month" until the owner confirms (see Open decisions).
 
 ## Geography

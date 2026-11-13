@@ -1,11 +1,13 @@
 // The only place that reads data/ and applies `ready` flags and ordering.
 import { cities, regions } from '@/data/cities';
 import { featured } from '@/data/featured';
+import { materialNames } from '@/data/materials';
+import { outsideAreaNames } from '@/data/outside-areas';
 import { pages } from '@/data/pages';
 import { projects } from '@/data/projects';
 import { reviews } from '@/data/reviews';
 import { services } from '@/data/services';
-import type { City, PageKey, Project, Region, Review, Service, ServiceSlug, SitePage } from '@/data/types';
+import type { City, CitySlug, Finish, Material, PageKey, Project, ProjectCity, Region, Review, Service, ServiceSlug, SitePage } from '@/data/types';
 
 export function getServices(): Service[] {
   return [...services].sort((a, b) => a.order - b.order);
@@ -46,12 +48,39 @@ export function getRegionsWithCities(): { region: Region; cities: City[] }[] {
   return groupByRegion(cities);
 }
 
+// All projects, drafts included (draft pages are noindex and out of the sitemap).
+export function getProjects(): Project[] {
+  return [...projects];
+}
+
 export function getReadyProjects(): Project[] {
   return projects.filter((p) => p.ready);
 }
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+// City page link only for the 14 focus cities; Elk Grove / West Sacramento have none.
+export function getProjectPlace(city: ProjectCity): { name: string; citySlug?: CitySlug } {
+  const focus = cities.find((c) => c.slug === city);
+  if (focus) return { name: focus.name, citySlug: focus.slug };
+  return { name: outsideAreaNames[city as keyof typeof outsideAreaNames] };
+}
+
+export function getMaterialName(material: Material): string {
+  return materialNames[material];
+}
+
+// "semi-transparent stain — Red Garrison"
+export function formatFinish(finish: Finish): string {
+  return finish.color ? `${finish.type} — ${finish.color}` : finish.type;
+}
+
+// "2026-09" -> "September 2026"
+export function formatMonth(yyyyMm: string): string {
+  const [y, m] = yyyyMm.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, 1)).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 }
 
 export function getFeaturedProjects(): Project[] {

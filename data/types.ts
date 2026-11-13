@@ -28,20 +28,55 @@ export type CitySlug =
   | 'east-sacramento';
 export interface City { slug: CitySlug; name: string; region: RegionId; ready: boolean; nearby: CitySlug[]; }
 
-export type Material = 'redwood' | 'trex' | 'timbertech' | 'ipe' | 'cumaru' | 'tigerwood' | 'garapa' | 'dasso-bamboo' | 'aluminum';
-export interface ProjectPhoto { id: string; src: string; width: number; height: number; alt: string; caption: string; } // alt/caption: "service — material — city"
+export type Material =
+  | 'redwood'
+  | 'trex'
+  | 'timbertech'
+  | 'ipe'
+  | 'cumaru'
+  | 'tigerwood'
+  | 'garapa'
+  | 'dasso-bamboo'
+  | 'fijian-mahogany'
+  | 'aluminum';
+
+// Projects outside the 14 focus cities: shown in the projects gallery only, never linked to a city page.
+export type OutsideArea = 'elk-grove' | 'west-sacramento';
+export type ProjectCity = CitySlug | OutsideArea;
+
+export type PhotoRole = 'before' | 'after' | 'process';
+export interface ProjectPhoto {
+  id: string; // "01", "02", ... = file public/projects/<slug>/<slug>-<id>.webp
+  src: string;
+  width: number;
+  height: number;
+  role: PhotoRole;
+  shows: string; // what the shot shows, e.g. "stairs before"
+  alt: string; // "service — material — city" + what the shot shows
+  caption: string; // "service — material — city"
+}
 export interface BeforeAfterPair { beforeId: string; afterId: string; caption: string; } // ids of photos in the same project; same spot and angle
+
+// Finish type + color as shown in cases ("semi-transparent stain — Red Garrison"); brand goes to case details.
+export interface Finish { type: string; color?: string; brand?: string; }
+
 export interface Project {
   slug: string;
   title: string;
-  city: CitySlug;
-  service: ServiceSlug;
+  city: ProjectCity;
+  services: ServiceSlug[]; // first = main service of the case
   materials: Material[];
+  completed: string; // "YYYY-MM"
   areaSqFt?: number;
+  areaApprox?: boolean; // true = "about N sq ft"
   days?: number;
+  finish?: Finish;
+  summary: string; // one line for cards
   before: string;
   whatWeDid: string;
-  finish?: string;
+  todo: string[]; // missing facts for the owner; shown only on draft pages
+  googleReview: boolean; // the client left a Google review (no client names in the repo)
+  coverId: string;
   photos: ProjectPhoto[];
   beforeAfter: BeforeAfterPair[];
   ready: boolean;
