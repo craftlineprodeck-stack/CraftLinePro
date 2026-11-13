@@ -9,7 +9,7 @@ import { NavDropdown } from './NavDropdown';
 export function SiteHeader() {
   const items = getMainNav();
   return (
-    <header className="relative z-40 border-b border-border bg-white">
+    <header className="relative z-50 border-b border-border bg-white">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-amber">
           <Logo />
