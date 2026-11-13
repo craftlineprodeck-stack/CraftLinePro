@@ -19,16 +19,18 @@ Instructions for Claude Code working in this repository. Read fully before any c
 4. **Add-ons:** railings (Redwood, composite, aluminum), stairs, pergolas. Fences are secondary (existing clients only).
 - **Current emphasis (until ~Mar/Apr 2027):** homepage hero, featured projects and reviews lean on **repair and restoration** (our strongest cases). Menu order stays as above. Emphasis must be switchable in data (featured order), not by redesign — from Mar/Apr shift toward building as build cases come in.
 - Reference for structure: SIA Builds.
-- **Finishes (owner, 11.11):** hardwood (Ipe etc.) — oils: Messmer's, DeckWise, Armstrong Clark, Penofin. Redwood — mostly semi-transparent stain; solid stain on very old decks; oil when the client asks. Abrasives: Diablo SandNET. Composite: Trex, TimberTech. In project cases state finish type + color (e.g. "semi-transparent stain — Red Garrison"); name the brand for hardwood oils, keep Redwood stain brands to case details. Never claim a brand we didn't use on the project; never say Redwood is finished with hardwood oils by default.
+- **Finishes (owner, 11.11):** hardwood (Ipe etc.) — oils: Messmer's, DeckWise, Armstrong Clark, Penofin. Redwood — mostly semi-transparent stain; solid stain on very old decks; oil when the client asks. Abrasives: Diablo SandNET. Composite: Trex, TimberTech. In project cases state finish type + color (e.g. "semi-transparent stain — Red Garrison"). **Brands (owner, 12.11):** name the brand only for hardwood oils (Messmer's, Armstrong Clark, DeckWise, Penofin); **never name stain brands anywhere** (no Woodluxe, Behr etc.) — stain = type + color only. **Coats (manufacturer standard):** water-based stain = always 2 coats; oil = always 1 coat — state it in every case. Never claim a brand we didn't use on the project; never say Redwood is finished with hardwood oils by default.
 - Photos of the owner's partner at work are approved for the site.
 - **Do NOT offer:** patio enclosures, porch construction, painting decks with paint, composite restoration.
 
 ## Text rules (hard)
 - All site copy in **English**.
 - **No "licensed"** and no CSLB number until the license is issued (owner will say when).
-- **Never mention cedar** (not used in region) or **Carmichael**.
+- **Never mention cedar** as a material (not used in region) or **Carmichael**. Only exception: the stain color name "cedar natural tone".
 - No keyword stuffing, no invented awards/stats, no "hundreds of satisfied customers", no fake reviews. Only verifiable numbers, identical everywhere.
 - No "near me / best / top rated / cost" stuffing in headings.
+- **"Built to code"** is allowed in case texts (owner confirmed 12.11: we always build to code). Permit and licensing claims stay banned until the owner confirms.
+- Wood is always finished with **stain** (type varies) — never write "paint"/"painted" about our work (e.g. "benches finished in a contrasting stain color", "skirting stained to match the house").
 - Don't claim insurance, permits handled, warranty terms, response-time promises, pricing or "N projects per month" until the owner confirms (see Open decisions).
 
 ## Geography
