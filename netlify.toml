@@ -13,3 +13,18 @@
     [ -n "$BASE" ] || exit 1
     git diff --quiet "$BASE" HEAD -- . ':(exclude)*.md' ':(exclude).claude/'
   """
+
+# Short links for printed QR codes (business card, van).
+# 302 on purpose: the target can be changed later without reprinting.
+# The UTM tags let GA4 show how many visitors came from each source.
+[[redirects]]
+  from = "/card"
+  to = "/?utm_source=business_card&utm_medium=print&utm_campaign=brand"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/van"
+  to = "/?utm_source=van&utm_medium=vehicle&utm_campaign=brand"
+  status = 302
+  force = true
